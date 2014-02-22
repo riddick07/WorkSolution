@@ -20,14 +20,11 @@ $().ready(function(){
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-                  <span class="icon-bar"><h3>Mainsail&nbsprelease&nbspsite</h3></span>
                 </div>
              </div>
         </div>
         <div class="pagination-centered m-top">
             <div class="header-padding">
-                <h1>A tool for managing</h1>
-                <h1>Tideworks releases.</h1>
             </div>
         </div>
         <div class="header-padding">

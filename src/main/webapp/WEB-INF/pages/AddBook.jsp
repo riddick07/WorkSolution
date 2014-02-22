@@ -31,7 +31,7 @@
         $.ajax({
             type : 'get',
             dataType : 'json',
-            url : '${model.serviceURL}loginedUser',
+            url : '${model.book1}',
             success : function(data) {
                 loginedUser= data;
                 $("#loginedUserLabel").text(loginedUser+', ');
