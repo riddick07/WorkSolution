@@ -1,0 +1,42 @@
+.red {color:red}
+.green {color:green}
+.yellow {color:#AA8833}
+
+.left {float:left}
+.right {float:left}
+
+.hidden{display:none}
+
+.black-border{border: 2px solid black}
+
+.middle{width:100px}
+.intermediate{width:200px}
+.large{width:300px}
+
+.m-left{margin-left: 10px}
+.m-right{margin-right: 10px}
+.m-top{margin-top: 10px}
+.m-bottom{margin-bottom: 10px}
+
+.small-m-top{margin-top: 4px}
+
+.login-center{
+    position:absolute;
+    top:30%;
+    left:10%
+}
+
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto;
+    height: 100%;
+    margin: 0 auto -4em;
+}
+
