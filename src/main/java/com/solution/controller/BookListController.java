@@ -24,7 +24,7 @@ public class BookListController extends GeneralController {
         model.put("book2", "Anser Tomas");
 
         if (SecurityContextHolder.getContext().getAuthentication().isAuthenticated() && !"anonymousUser".equals(SecurityContextHolder.getContext().getAuthentication().getName())) {
-            response.sendRedirect(request.getContextPath() + "/pages/StagingList.vw?tab=Staging");
+            response.sendRedirect(request.getContextPath() + "/pages/BookList.vw");
         }
 
         return new ModelAndView(getModelName(), "model", model);
