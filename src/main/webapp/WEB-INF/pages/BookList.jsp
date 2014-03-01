@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row show-grid">
                 <div class="span6 offset1">
-                    <table>
+                    <table class="table">
                         <tr>
                             <th>Name</th>
                             <th>Description</th>
