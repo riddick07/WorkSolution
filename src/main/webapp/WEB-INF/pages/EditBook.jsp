@@ -1,78 +1,43 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <head>
-<title></title>
+    <title></title>
 
-<jsp:include page="/WEB-INF/pages/includes/css.jsp" />
-<jsp:include page="/WEB-INF/pages/includes/jslib.jsp" />
+    <jsp:include page="/WEB-INF/pages/includes/css.jsp"/>
+    <jsp:include page="/WEB-INF/pages/includes/jslib.jsp"/>
 
-<script type="text/javascript">
-$(document).ready(function(){
-    $.ajax({
-        method: 'get',
-        dataType: 'json',
-        url: '${model.serviceURL}stagingProcess/${model.stagingId}',
-        success: function(data){
-            var version = data["version"];
-            var process = version.replace(/\.[0-9]*$/,"");
-            $("#version").text(version);
-            $("#headVersion").text(version);
-            $("#allPreviosReleases").text(version + " and previous " + process + " releases");
-            $("#allReleases").text("All " + process + " releases");
-    }});
-});
-</script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                method: 'get',
+                dataType: 'json',
+                url: '${model.serviceURL}/${model}',
+                success: function (data) {
+                    $("#name").text(data["name"]);
+                    $("#description").text(data["description"]);
+                    $("#year").text(data["year"]);
+                }});
+        });
+    </script>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="container-fluid">
-            <jsp:include page="includes/baseMenu.jsp">
-                <jsp:param name="stagingId" value="${model.stagingId}"/>
-                <jsp:param name="activeItem" value="parameterChanges"/>
-                <jsp:param name="activeMainItem" value="staging"/>
-                <jsp:param name="includeLeftPanel" value="true"/>
-            </jsp:include>
-            <div class="span9">
-                <a href="${pageContext.request.contextPath}/pages/StagingList.vw?tab=Staging">Staging</a>
-                > <span id="headVersion"></span>
-            </div>
-            <div class="span9">
-                 <h4>Parameter Changes</h4>
-            </div>
-            <div id="changes" class="span9"></div>
-        </div>
+<div class="wrapper">
+    <div class="span9">
+        <form action="${pageContext.request.contextPath}/pages/EditBook.vw">
+            <input type="text" id="name" value="Search for..."/>
+            <input type="text" multiple="4" id="description" value="Search for..."/>
+            <input type="text" id="year" value="2014"/>
+
+            <select class="span4" id="authors">
+                <option id="empty"></option>
+                <c:forEach begin="1" end="${ no }" step="1" varStatus="loopCounter"  value="${lstAuthors}" var="a">
+                    <option value="${a.name}"></option>
+                </c:forEach>
+            </select>
+            <input type="button" value="Submit"/>
+        </form>
     </div>
-    </div>
-    <div class="footer">
-        <jsp:include page="/WEB-INF/pages/includes/footer.jsp" />
-    </div>
+</div>
 </body>
-
-<jsp:include page="/WEB-INF/pages/includes/ParameterChangesTableModel.jsp" />
-
-<script type="text/javascript">
-    (function () {
-        TW.RSM.view.buildTable(
-            "parameterChanges/${model.stagingId}",
-            $("#changes"),
-            TW.RSM.models.ParameterChanges(),
-            "Parameter Changes"
-        );
-    }());
-
-    $("input.ui-pg-input").css({
-        'font-size': '10px', 
-        height: '3ex',
-        width: '3em', 
-        margin: '0em'
-    });
-    $("select.ui-pg-selbox").css({
-        'font-size': '10px', 
-        height: '5ex',
-        width: '7em', 
-        margin: '0em'
-    });
-    $("div.ui-jqgrid-pager").css({
-        height: '7ex'
-    });
-</script>

@@ -43,7 +43,7 @@ TW.RSM.models.SuccesfulStagingProcess = function() {
         new TW.RSM.column("version", "Version", false, "link", detailLinkFormater),
         new TW.RSM.column("dateTime", "Date/Time", false),
         new TW.RSM.column("status", "Status", false),
-        new TW.RSM.column("outputLink", "Staging Output", false, "link", outputLinkFormater) 
+        new TW.RSM.column("outputLink", "Staging Output", false, "link", outputLinkFormater)
     ];
 };
 
@@ -52,7 +52,7 @@ TW.RSM.models.FailedStagingProcess = function() {
         new TW.RSM.column("id", "Id", true, "checkbox", checkboxFormater, 'int'),
         new TW.RSM.column("branch", "Branch", false, "link", detailLinkFormater),
         new TW.RSM.column("dateTime", "Date/Time", false),
-        new TW.RSM.column("outputLink", "Output Link", false,"select", outputLinkFormater) 
+        new TW.RSM.column("outputLink", "Output Link", false,"select", outputLinkFormater)
     ];
 };
 

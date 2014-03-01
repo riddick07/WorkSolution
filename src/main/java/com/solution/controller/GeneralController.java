@@ -15,7 +15,6 @@ public abstract class GeneralController extends AbstractController {
 
     @Override
     protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
-//        String serviceURL = (String) ResourceBundle.getBundle("context").getObject("rest.service.url");
         String pageId = request.getParameter("pageId");
         Map<String, Object> model = new HashMap<String, Object>();
 
