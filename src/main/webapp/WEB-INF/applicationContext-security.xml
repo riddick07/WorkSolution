@@ -5,7 +5,7 @@
                         http://www.springframework.org/schema/security
                         http://www.springframework.org/schema/security/spring-security-3.0.xsd">
     <http create-session="never" auto-config="true">
-        <form-login login-page="/Login.vw" authentication-failure-url="/Login.vw?failed=true" default-target-url="/pages/BookList.vw" />
+        <form-login login-page="/Login.vw" authentication-failure-url="/Login.vw?failed=true" default-target-url="/pages/HomePage.vw" />
         <intercept-url pattern="/Login.vw" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <intercept-url pattern="/BookList.vw" access="ROLE_USER" />
         <intercept-url pattern="/lib/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />

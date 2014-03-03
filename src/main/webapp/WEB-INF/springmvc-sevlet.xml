@@ -13,18 +13,24 @@
                 <prop key="**/Login.vw">LoginController</prop>
                 <prop key="**/EditBook.vw">EditBookController</prop>
                 <prop key="**/AddBook.vw">AddBookController</prop>
+                <prop key="**/HomePage.vw">HomePageController</prop>
+                <prop key="**/AddAuthor.vw">AddAuthorController</prop>
+                <prop key="**/AuthorList.vw">AuthorListController</prop>
             </props>
         </property>
     </bean>
 
     <!-- JSP view resolver -->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-        p:viewClass="org.springframework.web.servlet.view.JstlView"
-        p:prefix="/WEB-INF/pages/"
-        p:suffix=".jsp"/>
+          p:viewClass="org.springframework.web.servlet.view.JstlView"
+          p:prefix="/WEB-INF/pages/"
+          p:suffix=".jsp"/>
 
     <bean name="BookListController" class="com.solution.controller.BookListController"/>
     <bean name="LoginController" class="com.solution.controller.LoginController"/>
     <bean name="EditBookController" class="com.solution.controller.EditBookController"/>
     <bean name="AddBookController" class="com.solution.controller.AddBookController"/>
+    <bean name="AuthorListController" class="com.solution.controller.AuthorListController"/>
+    <bean name="HomePageController" class="com.solution.controller.HomePageController"/>
+    <bean name="AddAuthorController" class="com.solution.controller.AddAuthorController"/>
 </beans>

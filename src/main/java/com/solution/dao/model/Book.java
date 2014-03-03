@@ -1,25 +1,32 @@
 package com.solution.dao.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Table(name = "solution_book")
 public class Book {
 
     @Id
-    @Column
+    @Column(name = "book_id")
+    @GeneratedValue
     private Integer id;
 
     @Column
     private String name;
 
     @Column
-    private String author;
+    private String description;
 
     @Column
-    private Date date;
+    private String year;
+
+    @ManyToMany
+    @JoinTable(name = "book_authors", joinColumns = {@JoinColumn(name = "book_id")}, inverseJoinColumns = {@JoinColumn(name = "author_id")})
+    private List<Author> authors;
+
+
+    private List<String> authorNames;
 
     public Integer getId() {
         return id;
@@ -27,6 +34,23 @@ public class Book {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+
+    public String getDescription() {
+        return description;
+    }
+
+    public List<String> getAuthorNames() {
+        return authorNames;
+    }
+
+    public void setAuthorNames(List<String> authorNames) {
+        this.authorNames = authorNames;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getName() {
@@ -37,19 +61,11 @@ public class Book {
         this.name = name;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getYear() {
+        return year;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
+    public void setYear(String year) {
+        this.year = year;
     }
 }

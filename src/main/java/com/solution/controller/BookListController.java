@@ -1,6 +1,7 @@
 package com.solution.controller;
 
 import com.google.gson.Gson;
+import com.solution.dao.BookDao;
 import com.solution.dao.model.Book;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.servlet.ModelAndView;
@@ -20,11 +21,20 @@ public class BookListController extends GeneralController {
     protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
         Map<String, Object> model = new HashMap<String, Object>();
 
-        List<Book> books = new ArrayList<Book>();
+//        BookDao bookDao = new BookDao();
+//        List<Book> books = bookDao.getAll();
+        List<Book> books = new ArrayList<>();
         Book book = new Book();
         book.setName("Holkings");
-        book.setDate(new Date());
-        book.setAuthor("Herlingem");
+        book.setYear("2002");
+        books.add(book);
+
+        List<String> names = new ArrayList<String>();
+        names.add("Alex");
+
+        book.setAuthorNames(names);
+
+        //TODO: Display list of books
 
         model.put("books", books);
 
