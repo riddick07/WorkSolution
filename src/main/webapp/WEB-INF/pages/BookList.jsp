@@ -40,9 +40,6 @@
                 <div id="result2" class="span12"></div>
             </div>
         </div>
-        <div class="footer">
-            <jsp:include page="/WEB-INF/pages/includes/footer.jsp" />
-        </div>
     </div>
 </body>
 
@@ -100,22 +97,7 @@
         }
     });
 
-
-    var loginedUser="";
-
-    $(document).ready(function() {
-        $.ajax({
-            type : 'get',
-            dataType : 'json',
-            url : '${model.serviceURL}loginedUser',
-            success : function(data) {
-                loginedUser= data;
-                $("#loginedUserLabel").text(loginedUser+', ');
-            }
-        });
-    });
-
-    $("#stagingActionBox").change( 
+    $("#stagingActionBox").change(
         function() {
             switch ($("#stagingActionBox").val()) {
                 case "Compare":
@@ -224,8 +206,7 @@
                 url: '${model.serviceURL}getStagingByItem/'+data,
                 success: function(stagingList){
                     if (stagingList.length > 1) {
-                        $("#resultTable").jqGrid('setGridParam',{url : "${model.serviceURL}getStagingByItem/"+data, datatype:'json'}).trigger("reloadGrid");
-                        $("#stagingActionBox").html($("#stagingActionBox").html() +'<option value="ShowList" id="showList">Show List</option>');
+                        $("#resultTable").jqGrid('setGridParam',{url : "${model.books}, datatype:'json'}).trigger("reloadGrid");
                     }
                     if(stagingList.length == 1){
                         document.location.href="StagingOverview.vw?stagingId="+stagingList[0].id;
@@ -240,18 +221,5 @@
         }
     }
 
-    function onChecks(data) {
-        $("#stagingActionBox").html($("#stagingActionBox").html());
-        $('#searchInput').val('Search for...');
-        if ($(data).attr('checked') == 'checked') {
-            checkedProcessesArr.push($(data).val());
-            countChecked++;
-        } else {
-            checkedProcessesArr.splice($.inArray($(data).val(),checkedProcessesArr), 1);
-            if (countChecked > 1) {
-                countChecked--;
-            }
-        }
-    }
 </script>
 </html>

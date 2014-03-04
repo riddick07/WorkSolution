@@ -7,6 +7,8 @@ import java.util.ResourceBundle;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.solution.dao.UserDao;
+import com.solution.dao.model.User;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,6 +28,14 @@ public class LoginController extends GeneralController {
         if (SecurityContextHolder.getContext().getAuthentication().isAuthenticated() && !"anonymousUser".equals(SecurityContextHolder.getContext().getAuthentication().getName())) {
             response.sendRedirect(request.getContextPath() + "/pages/BookList.vw");
         }
+
+        UserDao userDao = new UserDao();
+
+        User user = new User();
+
+
+
+        userDao.create(user);
 
         return new ModelAndView(getModelName(), "model", model);
     }

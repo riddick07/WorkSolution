@@ -5,9 +5,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class BookListController extends GeneralController {
 
@@ -20,8 +18,11 @@ public class BookListController extends GeneralController {
     protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
         Map<String, Object> model = new HashMap<String, Object>();
 
-        model.put("book1", "Tomas Guid");
-        model.put("book2", "Anser Tomas");
+        List<String> list = new ArrayList<String>();
+        list.add("Tomas Guid") ;
+        list.add("Anser Tomas");
+
+        model.put("books", list);
 
         if (SecurityContextHolder.getContext().getAuthentication().isAuthenticated() && !"anonymousUser".equals(SecurityContextHolder.getContext().getAuthentication().getName())) {
             response.sendRedirect(request.getContextPath() + "/pages/BookList.vw");
