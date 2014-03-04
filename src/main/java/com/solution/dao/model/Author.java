@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+@Entity
 @Table(name = "solution_author")
 public class Author {
 
@@ -18,7 +19,7 @@ public class Author {
     @Column
     private String surname;
 
-    @OneToMany(mappedBy="solution_authors")
+    @ManyToMany(mappedBy="solution_authors")
     private List<Book> books;
 
     public Integer getId() {

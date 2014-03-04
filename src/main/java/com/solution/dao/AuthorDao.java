@@ -1,13 +1,20 @@
 package com.solution.dao;
 
 import com.solution.dao.model.Author;
+import com.solution.dao.model.Book;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.util.List;
 
+
+@Transactional
 public class AuthorDao {
 
-    @PersistenceContext
+    @PersistenceContext(unitName = "SolutionPersistenceUnit")
     protected EntityManager em;
 
 
@@ -27,4 +34,10 @@ public class AuthorDao {
     public Author update(final Author author) {
         return this.em.merge(author);
     }
+
+    public List<Author> getAll() {
+        Query query = em.createQuery("SELECT e FROM Author e");
+        return (List<Author>) query.getResultList();
+    }
+
 }

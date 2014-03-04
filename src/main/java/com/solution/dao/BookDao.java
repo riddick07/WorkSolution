@@ -1,6 +1,7 @@
 package com.solution.dao;
 
 import com.solution.dao.model.Book;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -8,9 +9,10 @@ import javax.persistence.Query;
 import java.util.Collection;
 import java.util.List;
 
+@Transactional
 public class BookDao {
 
-    @PersistenceContext
+    @PersistenceContext(unitName = "SolutionPersistenceUnit")
     protected EntityManager em;
 
 
@@ -18,7 +20,8 @@ public class BookDao {
         em.persist(book);
         return book;
     }
-    public List<Book> getAll(){
+
+    public List<Book> getAll() {
         Query query = em.createQuery("SELECT e FROM Book e");
         return (List<Book>) query.getResultList();
     }

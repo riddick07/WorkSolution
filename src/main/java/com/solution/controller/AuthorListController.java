@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.solution.dao.AuthorDao;
 import com.solution.dao.model.Author;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -33,7 +34,12 @@ public class AuthorListController extends GeneralController {
 
         //TODO: Display list of authors
 
-        model.put("authors", authors);
+        AuthorDao authorDao = new AuthorDao();
+        authorDao.create(author);
+
+        List<Author> all = authorDao.getAll();
+
+        model.put("authors", all);
 
         return new ModelAndView(getModelName(), "model", model);
     }
