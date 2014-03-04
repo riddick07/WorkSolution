@@ -26,7 +26,7 @@ public class LoginController extends GeneralController {
         model.put("login", login);
 
         if (SecurityContextHolder.getContext().getAuthentication().isAuthenticated() && !"anonymousUser".equals(SecurityContextHolder.getContext().getAuthentication().getName())) {
-            response.sendRedirect(request.getContextPath() + "/pages/BookList.vw");
+            response.sendRedirect(request.getContextPath() + "/pages/EditBook.vw");
         }
 
         UserDao userDao = new UserDao();

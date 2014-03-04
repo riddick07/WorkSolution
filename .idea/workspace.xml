@@ -2,32 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00a6166d-a1e4-487a-8be9-07ff215a0ed7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/AddAuthor.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/solution/controller/AddAuthorController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/solution/dao/model/Author.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/solution/dao/AuthorDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/AuthorList.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/solution/controller/AuthorListController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/HomePage.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/solution/controller/HomePageController.java" />
+      <change type="DELETED" beforePath="D:\dev\projects\WorkSolutionNew\src\main\webapp\WEB-INF\pages\includes\BookListTableModel.jsp" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/AddBook.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/AddBook.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/solution/controller/AddBookController.java" afterPath="$PROJECT_DIR$/src/main/java/com/solution/controller/AddBookController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/solution/dao/model/Book.java" afterPath="$PROJECT_DIR$/src/main/java/com/solution/dao/model/Book.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/solution/dao/BookDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/solution/dao/BookDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/BookList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/BookList.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/solution/controller/BookListController.java" afterPath="$PROJECT_DIR$/src/main/java/com/solution/controller/BookListController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/solution/controller/GeneralController.java" afterPath="$PROJECT_DIR$/src/main/java/com/solution/controller/GeneralController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/EditBook.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/EditBook.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/solution/controller/EditBookController.java" afterPath="$PROJECT_DIR$/src/main/java/com/solution/controller/EditBookController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/solution/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/solution/controller/LoginController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext-security.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext-security.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/springmvc-sevlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/springmvc-sevlet.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WorkSolution.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/pom.xml" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393087126903" ignored="false" />
+    <file path="/pom.xml" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393676340764" ignored="false" />
     <file path="/context.properties" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1392573514990" ignored="false" />
-    <file path="/LoginController.java" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393574945085" ignored="false" />
-    <file path="/applicationContext-security.xml" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393429178589" ignored="false" />
-    <file path="/springmvc-sevlet.xml" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1392574347996" ignored="false" />
-    <file path="/fragment.java" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1392574365119" ignored="false" />
+    <file path="/LoginController.java" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1392573502257" ignored="false" />
+    <file path="/applicationContext-security.xml" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393879951746" ignored="false" />
+    <file path="/springmvc-sevlet.xml" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393879727883" ignored="false" />
+    <file path="/fragment.java" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393881117527" ignored="false" />
     <file path="/web.xml" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1392574447772" ignored="false" />
     <file path="/hibernate.cfg.xml" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1392574502211" ignored="false" />
     <file path="/HibernateFactory.java" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1392575097623" ignored="false" />
-    <file path="/persistence.xml" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393249686760" ignored="false" />
+    <file path="/persistence.xml" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393881101561" ignored="false" />
     <file path="/User.java" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393079087525" ignored="false" />
     <file path="/UserDao.java" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393076215354" ignored="false" />
-    <file path="/Book.java" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1392576868709" ignored="false" />
-    <file path="/Dummy.txt" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393931770375" ignored="false" />
-    <file path="/BookListController.java" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393430525129" ignored="false" />
+    <file path="/Book.java" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393882979780" ignored="false" />
+    <file path="/Dummy.txt" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393878550302" ignored="false" />
+    <file path="/BookListController.java" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393884538200" ignored="false" />
     <file path="/Login.jsp" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393082249434" ignored="false" />
-    <file path="/a.dummy" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393429121198" ignored="false" />
-    <file path="/BookList.jsp" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393430458696" ignored="false" />
+    <file path="/BookDao.java" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393884336621" ignored="false" />
+    <file path="/BookList.jsp" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393883642103" ignored="false" />
+    <file path="/EditBook.jsp" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393884057333" ignored="false" />
+    <file path="/EditBookController.java" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393881794948" ignored="false" />
+    <file path="/HomePage.jsp" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393881490199" ignored="false" />
+    <file path="/AddAuthorController.java" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393880396806" ignored="false" />
+    <file path="/AddBookController.java" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393884199523" ignored="false" />
+    <file path="/Author.java" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393880581332" ignored="false" />
+    <file path="/AuthorDao.java" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393881134056" ignored="false" />
+    <file path="/a.dummy" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393881186368" ignored="false" />
+    <file path="/AuthorListController.java" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393881713747" ignored="false" />
+    <file path="/AddAuthor.jsp" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393882517096" ignored="false" />
+    <file path="/AddBook.jsp" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393883885694" ignored="false" />
+    <file path="/AuthorList.jsp" changelist="00a6166d-a1e4-487a-8be9-07ff215a0ed7" time="1393883499130" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +73,6 @@
   </component>
   <component name="DebuggerManager">
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <breakpoint_rules default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -51,6 +80,7 @@
         <option name="ENABLED" value="false" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
         <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="SUSPEND" value="true" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
@@ -67,6 +97,7 @@
         <option name="ENABLED" value="false" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
         <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="SUSPEND" value="true" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
@@ -87,28 +118,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BookListController.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BookListController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/controller/BookListController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="43" selection-start="779" selection-end="779" vertical-scroll-proportion="0.0">
+            <state line="25" column="45" selection-start="859" selection-end="859" vertical-scroll-proportion="0.47145188">
+              <folding>
+                <element signature="e#1024#1032#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Book.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/dao/model/Book.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="42" selection-start="787" selection-end="787" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditBookController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/controller/EditBookController.java">
+      <file leaf-file-name="BookDao.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/dao/BookDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="57" selection-start="74" selection-end="91" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GeneralController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/controller/GeneralController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="95" selection-start="815" selection-end="815" vertical-scroll-proportion="0.0">
+            <state line="21" column="53" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -117,52 +150,24 @@
       <file leaf-file-name="AddBookController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/controller/AddBookController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="24" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookList.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/BookList.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="208" column="85" selection-start="8403" selection-end="8403" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditBook.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/EditBook.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="37" column="9" selection-start="1128" selection-end="1128" vertical-scroll-proportion="0.0">
               <folding>
-                <marker date="1393248591261" expanded="false" signature="278:805" placeholder="{...}" />
-                <marker date="1393248591261" expanded="false" signature="291:801" placeholder="{&quot;method&quot;: 'get'...}" />
-                <marker date="1393248591261" expanded="false" signature="442:800" placeholder="{...}" />
-                <marker date="1393248591261" expanded="false" signature="1885:2091" placeholder="{...}" />
-                <marker date="1393248591261" expanded="false" signature="2128:2233" placeholder="{&quot;font-size&quot;: '10px'...}" />
-                <marker date="1393248591261" expanded="false" signature="2269:2374" placeholder="{&quot;font-size&quot;: '10px'...}" />
-                <marker date="1393248591261" expanded="false" signature="2410:2439" placeholder="{&quot;height&quot;: '7ex'...}" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#763#771#0" expanded="true" />
+                <element signature="e#958#974#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="applicationContext-security.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext-security.xml">
+      <file leaf-file-name="EditBookController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/controller/EditBookController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="42" selection-start="1833" selection-end="1833" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/controller/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="78" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.8380282">
-              <folding />
+            <state line="32" column="36" selection-start="987" selection-end="987" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#736#744#0" expanded="true" />
+                <element signature="e#931#947#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -185,34 +190,37 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/solution/dao/HibernateFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/solution/dao/model/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/solution/dao/model/Book.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/solution/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/solution/dao/model/User.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/AddBook.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/Login.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext-security.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/solution/dao/AuthorDao.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/HomePage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/solution/dao/model/Author.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/solution/dao/model/Book.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/AuthorList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/solution/controller/AuthorListController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/BookList.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/solution/controller/EditBookController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/solution/controller/BookListController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/EditBook.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/AddBook.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/AddAuthor.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/solution/dao/BookDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/solution/controller/AddBookController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/solution/controller/GeneralController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/solution/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/solution/controller/BookListController.java" />
       </list>
-    </option>
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\maven" />
-      </MavenGeneralSettings>
     </option>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="WorkSolution" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
       <PATH>
         <PATH_ELEMENT>
           <option name="myItemId" value="" />
@@ -233,7 +241,7 @@
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1874" />
-    <option name="height" value="1096" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -244,7 +252,7 @@
     <OptionsSetting value="true" id="Edit" />
     <OptionsSetting value="true" id="Undo Check Out" />
     <OptionsSetting value="true" id="Get Latest Version" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -263,8 +271,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -279,7 +285,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WorkSolution" />
+              <option name="myItemId" value="WorkSolutionNew" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -289,7 +295,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WorkSolution" />
+              <option name="myItemId" value="WorkSolutionNew" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -311,7 +317,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WorkSolution" />
+              <option name="myItemId" value="WorkSolutionNew" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -337,7 +343,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WorkSolution" />
+              <option name="myItemId" value="WorkSolutionNew" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -367,33 +373,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WorkSolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorkSolution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorkSolution" />
+              <option name="myItemId" value="WorkSolutionNew" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -415,7 +395,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WorkSolution" />
+              <option name="myItemId" value="WorkSolutionNew" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -441,7 +421,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WorkSolution" />
+              <option name="myItemId" value="WorkSolutionNew" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -471,7 +451,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="WorkSolutionNew" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solution" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
               <option name="myItemId" value="WorkSolution" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorkSolutionNew" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -497,6 +511,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -522,7 +538,13 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.solution.dao" />
+      <recent name="com.solution.dao.model" />
       <recent name="com.solution.controller" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\dev\projects\WorkSolutionNew\src\main\webapp\WEB-INF\pages" />
+      <recent name="D:\dev\projects\WorkSolutionNew\src\main\java\com\solution\controller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\dev\projects\WorkSolution\src\main\resources" />
@@ -627,6 +649,7 @@
             <option name="profilesMap">
               <map />
             </option>
+            <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="" />
           </MavenRunnerParameters>
         </option>
@@ -652,34 +675,6 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -872,7 +867,7 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
     <option name="mySSHConnectionTimeout" value="30000" />
@@ -882,7 +877,6 @@
     <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
     <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
     <option name="IGNORE_SPACES_IN_MERGE" value="false" />
-    <option name="DETECT_NESTED_COPIES" value="true" />
     <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
     <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
     <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
@@ -908,51 +902,51 @@
       <created>1393249711127</created>
       <updated>1393249711127</updated>
     </task>
-    <task id="LOCAL-00004" summary="fix pom">
-      <created>1393421228452</created>
-      <updated>1393421228452</updated>
+    <task id="LOCAL-00004" summary="page">
+      <created>1393680315567</created>
+      <updated>1393680315567</updated>
     </task>
-    <task id="LOCAL-00005" summary="implement login">
-      <created>1393429271673</created>
-      <updated>1393429271673</updated>
+    <task id="LOCAL-00005" summary="page">
+      <created>1393680613481</created>
+      <updated>1393680613481</updated>
     </task>
-    <task id="LOCAL-00006" summary="ignore commit">
-      <created>1393931772950</created>
-      <updated>1393931772950</updated>
+    <task id="LOCAL-00006" summary="ignore">
+      <created>1393682177691</created>
+      <updated>1393682177691</updated>
     </task>
     <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1874" height="1096" extended-state="0" />
+    <frame x="-8" y="-8" width="1874" height="1092" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32977587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21818182" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17218544" sideWeight="0.67022413" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17218544" sideWeight="0.68488747" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23013245" sideWeight="0.67022413" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32870865" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23454747" sideWeight="0.68488747" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31511253" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -982,7 +976,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
-    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
     <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
     <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
@@ -992,9 +986,13 @@
     <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
     <option name="LIMIT_HISTORY" value="true" />
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="ignore commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="ignore" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1005,142 +1003,138 @@
     <option name="ACTIVE_VCS_NAME" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="init commit" />
     <MESSAGE value="2" />
-    <MESSAGE value="fix pom" />
-    <MESSAGE value="implement login" />
-    <MESSAGE value="ignore commit" />
+    <MESSAGE value="page" />
+    <MESSAGE value="ignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="25" selection-start="952" selection-end="954" vertical-scroll-proportion="0.029411765">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/AddBook.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="29" selection-start="3127" selection-end="3127" vertical-scroll-proportion="0.49913344">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="77" selection-start="1133" selection-end="1133" vertical-scroll-proportion="0.3946932">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="31" selection-start="889" selection-end="889" vertical-scroll-proportion="0.0">
+        <state line="13" column="71" selection-start="815" selection-end="815" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/utils.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/dao/model/Author.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="68" selection-start="609" selection-end="609" vertical-scroll-proportion="-0.4941957" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/jslib.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="50" selection-start="106" selection-end="106" vertical-scroll-proportion="0.058925476" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/lib/bootstrap/js/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3806" column="0" selection-start="105125" selection-end="105125" vertical-scroll-proportion="0.3322034" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/Login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="51" selection-start="1606" selection-end="1606" vertical-scroll-proportion="0.0">
+        <state line="10" column="27" selection-start="190" selection-end="199" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext-security.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/controller/AddAuthorController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="42" selection-start="1833" selection-end="1833" vertical-scroll-proportion="0.0">
+        <state line="7" column="13" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/springmvc-sevlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="78" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/controller/AuthorListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="40" selection-start="969" selection-end="969" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#780#788#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/BookList.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="208" column="85" selection-start="8403" selection-end="8403" vertical-scroll-proportion="0.0">
+        <state line="24" column="23" selection-start="791" selection-end="791" vertical-scroll-proportion="-6.230769">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/EditBook.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/AuthorList.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1393248591261" expanded="false" signature="278:805" placeholder="{...}" />
-            <marker date="1393248591261" expanded="false" signature="291:801" placeholder="{&quot;method&quot;: 'get'...}" />
-            <marker date="1393248591261" expanded="false" signature="442:800" placeholder="{...}" />
-            <marker date="1393248591261" expanded="false" signature="1885:2091" placeholder="{...}" />
-            <marker date="1393248591261" expanded="false" signature="2128:2233" placeholder="{&quot;font-size&quot;: '10px'...}" />
-            <marker date="1393248591261" expanded="false" signature="2269:2374" placeholder="{&quot;font-size&quot;: '10px'...}" />
-            <marker date="1393248591261" expanded="false" signature="2410:2439" placeholder="{&quot;height&quot;: '7ex'...}" />
-          </folding>
+        <state line="41" column="21" selection-start="1216" selection-end="1216" vertical-scroll-proportion="-13.423077">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/controller/EditBookController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="57" selection-start="74" selection-end="91" vertical-scroll-proportion="0.0">
+        <state line="32" column="36" selection-start="987" selection-end="987" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#736#744#0" expanded="true" />
+            <element signature="e#931#947#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/EditBook.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="12" selection-start="1396" selection-end="1400" vertical-scroll-proportion="-12.307693">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/controller/BookListController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/AddAuthor.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="43" selection-start="779" selection-end="779" vertical-scroll-proportion="0.0">
+        <state line="32" column="16" selection-start="1278" selection-end="1278" vertical-scroll-proportion="-15.576923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/Login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="7.8461537">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/dao/model/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="42" selection-start="787" selection-end="787" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/AddBook.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="16" selection-start="1397" selection-end="1397" vertical-scroll-proportion="0.6592845">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/dao/BookDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="53" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/controller/AddBookController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="24" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="37" column="9" selection-start="1128" selection-end="1128" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#763#771#0" expanded="true" />
+            <element signature="e#958#974#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/controller/GeneralController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/controller/BookListController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="95" selection-start="815" selection-end="815" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/solution/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="78" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.8380282">
-          <folding />
+        <state line="25" column="45" selection-start="859" selection-end="859" vertical-scroll-proportion="0.47145188">
+          <folding>
+            <element signature="e#1024#1032#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1150,12 +1144,11 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>WorkSolution:war exploded</last-edited>
+          <last-edited>WorkSolution:war</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.28669277" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1186,7 +1179,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.7</last-edited>
+          <last-edited>1.6</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

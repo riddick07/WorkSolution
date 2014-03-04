@@ -1,24 +1,25 @@
 package com.solution.dao.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
 
-@Table(name = "solution_users")
-public class User {
+@Table(name = "solution_author")
+public class Author {
 
     @Id
-    @Column
+    @Column(name="author_id")
+    @GeneratedValue
     private Integer id;
 
     @Column
     private String name;
+
     @Column
     private String surname;
-    @Column
-    private String login;
-    @Column
-    private String password;
+
+    @OneToMany(mappedBy="solution_authors")
+    private List<Book> books;
 
     public Integer getId() {
         return id;
@@ -42,21 +43,5 @@ public class User {
 
     public void setSurname(String surname) {
         this.surname = surname;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }
