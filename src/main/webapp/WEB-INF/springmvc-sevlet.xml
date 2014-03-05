@@ -39,29 +39,12 @@
     <bean name="HomePageController" class="com.solution.controller.HomePageController"/>
     <bean name="AddAuthorController" class="com.solution.controller.AddAuthorController"/>
 
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-          p:driverClassName="com.mysql.jdbc.Driver" p:url="jdbc:mysql://localhost/solution"
-          p:username="root" p:password="" p:initialSize="5" p:maxActive="10">
-    </bean>
+    <context:annotation-config />
 
-    <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
-            id="entityManagerFactory">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
+    <!-- Определяем папки, в которых будем автоматически искать бины-компоненты (@Component, @Service)  -->
+    <!--<context:component-scan base-package="com.solution.dao" />-->
+    <!--<context:component-scan base-package="com.solution.service" />-->
 
-    <context:component-scan base-package="com.solution.dao">
-        <context:include-filter type="annotation"
-                                expression="org.springframework.stereotype.Repository"/>
-    </context:component-scan>
+    <!--<import resource="data.xml" />-->
 
-    <bean class="org.springframework.orm.jpa.JpaTransactionManager"
-          id="transactionManager">
-        <property name="entityManagerFactory" ref="entityManagerFactory"/>
-    </bean>
-
-    <tx:annotation-driven mode="aspectj"
-                          transaction-manager="transactionManager"/>
-
-    <context:spring-configured/>
-    <context:annotation-config/>
 </beans>

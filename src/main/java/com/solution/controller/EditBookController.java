@@ -1,7 +1,6 @@
 package com.solution.controller;
 
-import com.solution.dao.model.Author;
-import com.solution.dao.model.Book;
+import com.solution.model.Author;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;

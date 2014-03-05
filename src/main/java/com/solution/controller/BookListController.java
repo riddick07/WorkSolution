@@ -1,9 +1,6 @@
 package com.solution.controller;
 
-import com.google.gson.Gson;
-import com.solution.dao.BookDao;
-import com.solution.dao.model.Book;
-import org.springframework.security.core.context.SecurityContextHolder;
+import com.solution.model.Book;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;

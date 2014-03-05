@@ -1,40 +1,33 @@
 package com.solution.dao;
 
-import com.solution.dao.model.Book;
-import org.springframework.transaction.annotation.Transactional;
+import com.solution.model.Book;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import java.util.Collection;
 import java.util.List;
 
-@Transactional
-public class BookDao {
+@Repository
+public class BookDao implements IBookDao {
 
-    @PersistenceContext(unitName = "SolutionPersistenceUnit")
-    protected EntityManager em;
+    @Autowired
+    private SessionFactory sessionFactory;
 
-
-    public Book create(Book book) {
-        em.persist(book);
-        return book;
+    @Override
+    public void addBook(Book book) {
+        sessionFactory.getCurrentSession().save(book);
     }
 
-    public List<Book> getAll() {
-        Query query = em.createQuery("SELECT e FROM Book e");
-        return (List<Book>) query.getResultList();
+    @Override
+    public List<Book> listBooks() {
+        return sessionFactory.getCurrentSession().createQuery("from Book").list();
     }
 
-    public void delete(final Object id) {
-        this.em.remove(this.em.getReference(Book.class, id));
-    }
-
-    public Book find(final Object id) {
-        return (Book) this.em.find(Book.class, id);
-    }
-
-    public Book update(final Book book) {
-        return this.em.merge(book);
+    @Override
+    public void removeBook(Integer id) {
+        Book book = (Book) sessionFactory.getCurrentSession().load(Book.class, id);
+        if (null != book) {
+            sessionFactory.getCurrentSession().delete(book);
+        }
     }
 }

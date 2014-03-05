@@ -1,43 +1,34 @@
 package com.solution.dao;
 
-import com.solution.dao.model.Author;
-import com.solution.dao.model.Book;
+import com.solution.model.Author;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import java.util.List;
 
 
-@Transactional
-public class AuthorDao {
+@Repository
+public class AuthorDao implements IAuthorDao {
 
-    @PersistenceContext(unitName = "SolutionPersistenceUnit")
-    protected EntityManager em;
+    @Autowired
+    private SessionFactory sessionFactory;
 
-
-    public Author create(Author author) {
-        em.persist(author);
-        return author;
+    @Override
+    public void addAuthor(Author author) {
+        sessionFactory.getCurrentSession().save(author);
     }
 
-    public void delete(final Object id) {
-        this.em.remove(this.em.getReference(Author.class, id));
+    @Override
+    public List<Author> listAuthors() {
+        return sessionFactory.getCurrentSession().createQuery("from Author").list();
     }
 
-    public Author find(final Object id) {
-        return (Author) this.em.find(Author.class, id);
+    @Override
+    public void removeAuthor(Integer id) {
+        Author contact = (Author) sessionFactory.getCurrentSession().load(Author.class, id);
+        if (null != contact) {
+            sessionFactory.getCurrentSession().delete(contact);
+        }
     }
-
-    public Author update(final Author author) {
-        return this.em.merge(author);
-    }
-
-    public List<Author> getAll() {
-        Query query = em.createQuery("SELECT e FROM Author e");
-        return (List<Author>) query.getResultList();
-    }
-
 }

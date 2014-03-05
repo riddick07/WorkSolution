@@ -1,7 +1,6 @@
 package com.solution.controller;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,13 +8,17 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.solution.dao.AuthorDao;
-import com.solution.dao.model.Author;
+import com.solution.model.Author;
+import com.solution.service.IAuthorService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.solution.dao.model.Book;
-
+@Controller
 public class AuthorListController extends GeneralController {
+
+//    @Autowired
+//    private IAuthorService authorService;
 
     @Override
     public String getModelName() {
@@ -34,12 +37,11 @@ public class AuthorListController extends GeneralController {
 
         //TODO: Display list of authors
 
-        AuthorDao authorDao = new AuthorDao();
-        authorDao.create(author);
+//        authorService.addAuthor(author);
 
-        List<Author> all = authorDao.getAll();
+//        List<Author> all = authorService.listAuthor();
 
-        model.put("authors", all);
+        model.put("authors", authors);
 
         return new ModelAndView(getModelName(), "model", model);
     }

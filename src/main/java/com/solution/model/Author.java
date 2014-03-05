@@ -1,7 +1,6 @@
-package com.solution.dao.model;
+package com.solution.model;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Entity
