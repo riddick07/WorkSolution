@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <head>
-    <title>Add book</title>
+    <title>Добавление книги</title>
 
     <jsp:include page="/WEB-INF/pages/includes/css.jsp"/>
     <jsp:include page="/WEB-INF/pages/includes/jslib.jsp"/>
@@ -16,13 +16,13 @@
         <table border="0" width="100%" cellpadding="0" cellspacing="0">
             <tr align="right">
                 <td align="left">
-                    <a href="${pageContext.request.contextPath}/pages/HomePage.vw"> Main </a>
+                    <a href="${pageContext.request.contextPath}/pages/HomePage.vw"> Домашняя страница</a>
                     &nbsp > &nbsp
-                    <a href="${pageContext.request.contextPath}/pages/BookList.vw"> List of
-                        books </a> &nbsp > &nbsp Create book
+                    <a href="${pageContext.request.contextPath}/pages/BookList.vw"> Список книг </a> &nbsp > &nbsp
+                    Создать книгу
                 </td>
                 <td>
-                    <a href="j_spring_security_logout"> Logout </a>
+                    <a href="j_spring_security_logout"> Выйти </a>
                 </td>
             </tr>
         </table>
@@ -37,10 +37,9 @@
             <br>
 
             <form:select path="authorNames" onchange="submitForm()">
-                <form:option value="0" >Select </form:option>
-                <form:options items="${authorNames}" />
+                <form:options items="${authorNames}"/>
             </form:select>
-            <input type="submit" value="Submit"/>
+            <input type="submit" value="Добавить"/>
         </form:form>
     </div>
 </div>

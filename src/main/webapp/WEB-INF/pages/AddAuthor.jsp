@@ -16,12 +16,11 @@
         <table border="0" width="100%" cellpadding="0" cellspacing="0">
             <tr align="right">
                 <td align="left">
-                    <a href="${pageContext.request.contextPath}/pages/HomePage.vw"> Main </a>
+                    <a href="${pageContext.request.contextPath}/pages/HomePage.vw"> Домашняя страница </a>
                     &nbsp > &nbsp
-                    <a href="${pageContext.request.contextPath}/pages/AuthorList.vw"> List of
-                        authors </a> &nbsp > &nbsp Create author</td>
+                    <a href="${pageContext.request.contextPath}/pages/AuthorList.vw"> Список авторов </a> &nbsp > &nbsp Создание автора</td>
                 <td>
-                    <a href="j_spring_security_logout"> Logout </a>
+                    <a href="j_spring_security_logout"> Выйти </a>
                 </td>
             </tr>
         </table>
@@ -32,7 +31,7 @@
             <form:input class="form-control" path="surname"/>
             <br>
 
-            <input type="submit" value="Submit"/>
+            <input type="submit" value="Добавить"/>
         </form:form>
     </div>
 </div>

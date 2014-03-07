@@ -15,13 +15,12 @@
         <table border="0" width="100%" cellpadding="0" cellspacing="0">
             <tr align="right">
                 <td align="left">
-                    <a href="${pageContext.request.contextPath}/pages/HomePage.vw"> Main </a>
+                    <a href="${pageContext.request.contextPath}/pages/HomePage.vw"> Домашняя страница </a>
                     &nbsp > &nbsp
-                    <a href="${pageContext.request.contextPath}/pages/BookList.vw"> List of
-                        books </a> &nbsp > &nbsp Edit book
+                    <a href="${pageContext.request.contextPath}/pages/BookList.vw"> Список книг </a> &nbsp > &nbsp Редактирование книги
                 </td>
                 <td>
-                    <a href="j_spring_security_logout"> Logout </a>
+                    <a href="j_spring_security_logout"> Выйти </a>
                 </td>
             </tr>
         </table>
@@ -35,10 +34,9 @@
             <br>
 
             <form:select path="authorNames" onchange="submitForm()">
-                <form:option value="0" >Select </form:option>
                 <form:options items="${authorNames}" />
             </form:select>
-            <input type="submit" value="Submit"/>
+            <input type="submit" value="Изменить"/>
         </form:form>
     </div>
 </div>

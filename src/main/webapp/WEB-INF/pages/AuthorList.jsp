@@ -12,7 +12,7 @@
        cellspacing="0">
     <tr border="0" align="center" valign="middle">
         <td>
-            <h2>Book catalog</h2>
+            <h2>Список авторов</h2>
         </td>
     </tr>
 </table>
@@ -20,22 +20,26 @@
 <table border="0" width="100%" cellpadding="0" cellspacing="0">
     <tr align="right">
         <td align="left">
-            <a href="${pageContext.request.contextPath}/pages/HomePage.vw"> Main </a>
-            &nbsp > &nbsp List of
-            authors
+            <a href="${pageContext.request.contextPath}/pages/HomePage.vw"> Домашняя страница </a>
+            &nbsp > &nbsp Список авторов
         </td>
         <td>
-            <a href="j_spring_security_logout"> Logout </a>
+            <a href="j_spring_security_logout"> Выйти </a>
         </td>
     </tr>
 </table>
 <br/>
+
+<form action="${pageContext.request.contextPath}/AddAuthor.vw">
+    <input type="submit" value="Создать автора"/>
+</form>
 
 <table border="1" valign="bottom" align="left" cellspacing="0"
        cellpadding="5" width="100%">
     <tr border="0" align="left" height="20%">
         <td bgcolor="#778899">Name</td>
         <td bgcolor="#778899">Surname</td>
+        <td bgcolor="#778899">Действия</td>
     </tr>
 
     <c:forEach items="${model.authors}"
@@ -43,6 +47,9 @@
         <tr align="left" height="100%">
             <td>${a.name}</td>
             <td>${a.surname}</td>
+            <td><a href="${pageContext.request.contextPath}/EditBook.vw">Модифицировать</a>
+                <a href="${pageContext.request.contextPath}/pages/AuthorList.vw">Удаление</a>
+                <a href="${pageContext.request.contextPath}/pages/BookList.vw">Список книг</a></td>
         </tr>
     </c:forEach>
 </table>

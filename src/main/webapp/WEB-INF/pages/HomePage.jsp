@@ -12,7 +12,7 @@
        cellspacing="0">
     <tr border="0" align="center" valign="middle">
         <td>
-            <h2>Library Solution</h2>
+            <h2>Вы вошли в электронную библиотеку</h2>
         </td>
     </tr>
 </table>
@@ -21,16 +21,16 @@
     <tr align="right">
         <td align="left">
             <h1>
-                <a href="${pageContext.request.contextPath}/pages/BookList.vw"> List of books </a>
+                <a href="${pageContext.request.contextPath}/pages/BookList.vw"> Список книг </a>
             </h1>
         </td>
         <td>
-            <h4><a href="j_spring_security_logout"> Logout </a></h4>
+            <h4><a href="j_spring_security_logout"> Выйти </a></h4>
         </td>
     </tr>
     <tr>
         <h1>
-            <a href="${pageContext.request.contextPath}/pages/AuthorList.vw"> List of authors </a>
+            <a href="${pageContext.request.contextPath}/pages/AuthorList.vw"> Список авторов </a>
         </h1>
     </tr>
 </table>
