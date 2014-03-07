@@ -24,23 +24,25 @@ public class AddBookController extends SimpleFormController {
     }
 
     @Override
+    protected Map<String, Object> referenceData(HttpServletRequest request) throws Exception {
+
+        Map<String, Object> referenceData = new HashMap<String, Object>();
+        List<String> authors = new ArrayList<String>();
+        authors.add("Alex");
+        //TODO: Get authors from service
+        referenceData.put("authorNames", authors);
+
+        return referenceData;
+    }
+
+    @Override
     protected ModelAndView onSubmit(Object command) throws Exception {
         Book book = (Book) command;
 
-        //TODO: get book from view and add to DB
-        List<Author> authors = new ArrayList<Author>();
-        Author author = new Author();
-        author.setName("Alex");
-        author.setSurname("Cross");
-        authors.add(author);
-
-        Map<String, Object> model = new HashMap<String, Object>();
-        model.put("authors", authors);
-        model.put("book", book);
-
+        //TODO: save Book
 //        authorService.addAuthor(author);
 
-        return new ModelAndView(getModelName(), "model", model);
+        return new ModelAndView("BookList", "book", book);
     }
 
 }

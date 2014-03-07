@@ -1,7 +1,9 @@
 package com.solution.controller;
 
 import com.solution.model.Author;
+import com.solution.model.Book;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.SimpleFormController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,28 +12,37 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class EditBookController extends GeneralController
-{
+public class EditBookController extends SimpleFormController {
 
-    @Override
-    public String getModelName()
-    {
+    public String getModelName() {
         return "EditBook";
     }
 
+    public EditBookController() {
+        setCommandClass(Book.class);
+        setCommandName("book");
+    }
+
     @Override
-    protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        //TODO: get book from view and add to DB
-        List<Author> authors = new ArrayList<Author>();
-        Author author = new Author();
-        author.setName("Alex");
-        author.setSurname("Cross");
-        authors.add(author);
+    protected Map<String, Object> referenceData(HttpServletRequest request) throws Exception {
 
-        Map<String, Object> model = new HashMap<String, Object>();
-        model.put("authors", authors);
+        Map<String, Object> referenceData = new HashMap<String, Object>();
+        List<String> authors = new ArrayList<String>();
+        authors.add("Alex");
+        //TODO: Get authors from service
+        referenceData.put("authorNames", authors);
 
-        return new ModelAndView(getModelName(),"model", model);
+        return referenceData;
+    }
+
+    @Override
+    protected ModelAndView onSubmit(Object command) throws Exception {
+        Book book = (Book) command;
+
+        //TODO: save Book
+//        authorService.addAuthor(author);
+
+        return new ModelAndView("BookList", "book", book);
     }
 
 }

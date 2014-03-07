@@ -35,7 +35,7 @@ public class AddAuthorController extends SimpleFormController {
 
 //        authorService.addAuthor(author);
 
-        return new ModelAndView(getModelName(), "author", author);
+        return new ModelAndView("AuthorList", "author", author);
     }
 
 }
