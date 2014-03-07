@@ -26,22 +26,22 @@
         </table>
 
         <br>
-        <form action="${pageContext.request.contextPath}/pages/BookList.vw">
-            <input class="form-control" type="text" id="name" value="Name"/>
+        <form:form method="POST" commandName="book">
+            <form:input class="form-control" path="name"/>
             <br>
-            <input class="form-control" type="text" multiple="4" id="description" value="Description"/>
+            <form:input class="form-control" path="description"/>
             <br>
-            <input class="form-control" type="text" id="year" value="2014"/>
+            <form:input class="form-control" path="year"/>
             <br>
 
-            <select class="span4" id="authors">
-                <option id="empty"></option>
-                <c:forEach items="${model.authors}" var="a">
-                    <option value="${a.id}">${a.name} ${a.surname}</option>
-                </c:forEach>
-            </select>
-            <input type="button" value="Submit"/>
-        </form>
+            <%--<form:select class="span4" path="authors">--%>
+                <%--<form:option value="empty" label=""/>--%>
+                <%--<c:forEach items="${model.authors}" var="a">--%>
+                    <%--<form:option value="${a.id}" label="${a.name} ${a.surname}"/>--%>
+                <%--</c:forEach>--%>
+            <%--</form:select>--%>
+            <%--<input type="submit" value="Submit"/>--%>
+        <%--</form:form>--%>
     </div>
 </div>
 </body>

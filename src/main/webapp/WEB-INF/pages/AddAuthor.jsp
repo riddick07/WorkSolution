@@ -26,14 +26,14 @@
             </tr>
         </table>
 
-        <form action="${pageContext.request.contextPath}/pages/AuthorList.vw">
-            <input class="form-control" type="text" id="name" value="Name"/>
+        <form:form method="POST" commandName="author">
+            <form:input class="form-control" path="name"/>
             <br>
-            <input class="form-control" type="text" id="surname" value="Surname"/>
+            <form:input class="form-control" path="surname"/>
             <br>
 
-            <input type="button" value="Submit"/>
-        </form>
+            <input type="submit" value="Submit"/>
+        </form:form>
     </div>
 </div>
 </body>

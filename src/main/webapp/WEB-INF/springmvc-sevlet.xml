@@ -47,4 +47,7 @@
 
     <!--<import resource="data.xml" />-->
 
+    <!--<bean id="authorService" class="com.solution.service.AuthorService" />-->
+    <!--<bean id="bookService" class="com.solution.service.BookService" />-->
+
 </beans>

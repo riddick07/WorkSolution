@@ -1,7 +1,9 @@
 package com.solution.controller;
 
 import com.solution.model.Author;
+import com.solution.model.Book;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.SimpleFormController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,15 +12,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AddBookController extends GeneralController {
+public class AddBookController extends SimpleFormController {
 
-    @Override
     public String getModelName() {
         return "AddBook";
     }
 
+    public AddBookController() {
+        setCommandClass(Book.class);
+        setCommandName("book");
+    }
+
     @Override
-    protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    protected ModelAndView onSubmit(Object command) throws Exception {
+        Book book = (Book) command;
+
         //TODO: get book from view and add to DB
         List<Author> authors = new ArrayList<Author>();
         Author author = new Author();
@@ -28,18 +36,9 @@ public class AddBookController extends GeneralController {
 
         Map<String, Object> model = new HashMap<String, Object>();
         model.put("authors", authors);
+        model.put("book", book);
 
-
-        //TODO: check from UI
-//        Book book = new Book();
-//        book.setName("Holkings");
-//        book.setYear("2002");
-//        List<String> names = new ArrayList<String>();
-//        names.add("Alex");
-//        book.setAuthorNames(names);
-//        BookDao bookDao = new BookDao();
-//        bookDao.create(book);
-
+//        authorService.addAuthor(author);
 
         return new ModelAndView(getModelName(), "model", model);
     }
