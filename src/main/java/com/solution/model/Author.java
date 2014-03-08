@@ -1,6 +1,7 @@
 package com.solution.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -8,9 +9,12 @@ import java.util.List;
 public class Author {
 
     @Id
-    @Column(name="author_id")
+    @Column(name = "author_id")
     @GeneratedValue
     private Integer id;
+
+    @Column
+    private String fullName;
 
     @Column
     private String name;
@@ -18,8 +22,8 @@ public class Author {
     @Column
     private String surname;
 
-    @ManyToMany(mappedBy="solution_authors")
-    private List<Book> books;
+//    @ManyToMany(mappedBy = "author_books")
+//    private List<Book> books = new ArrayList<Book>();
 
     public Integer getId() {
         return id;
@@ -44,4 +48,13 @@ public class Author {
     public void setSurname(String surname) {
         this.surname = surname;
     }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
 }

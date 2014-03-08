@@ -16,42 +16,33 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-public class AddBookController extends SimpleFormController {
-
-    @Autowired
-    private IBookService bookService;
+public class EditAuthorController extends SimpleFormController {
 
     @Autowired
     private IAuthorService authorService;
 
-    public AddBookController() {
-        setCommandClass(Book.class);
-        setCommandName("book");
+    public EditAuthorController() {
+        setCommandClass(Author.class);
+        setCommandName("author");
     }
 
     @Override
     protected Map<String, Object> referenceData(HttpServletRequest request) throws Exception {
-
         Map<String, Object> referenceData = new HashMap<String, Object>();
-        List<String> authors = new ArrayList<String>();
-        List<Author> authorList = authorService.listAuthor();
-        for (Author author : authorList) {
-            authors.add(author.getFullName());
-        }
-        referenceData.put("authorNames", authors);
-
         return referenceData;
     }
 
     @Override
     protected ModelAndView onSubmit(Object command) throws Exception {
-        Book book = (Book) command;
-        bookService.addBook(book);
+        Author author = (Author) command;
+        author.setFullName(author.getName() + " " + author.getSurname());
+
+        authorService.addAuthor(author);
 
         Map<String, Object> model = new HashMap<String, Object>();
-        List<Book> books = bookService.listBooks();
-        model.put("books", books);
-        return new ModelAndView("BookList", "model", model);
+        List<Author> authors = authorService.listAuthor();
+        model.put("authors", authors);
+        return new ModelAndView("AuthorList", "model", model);
     }
 
 }

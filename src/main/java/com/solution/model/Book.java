@@ -1,6 +1,10 @@
 package com.solution.model;
 
+import org.hibernate.annotations.CollectionOfElements;
+import org.hibernate.mapping.Collection;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,11 +25,12 @@ public class Book {
     @Column
     private String year;
 
-    @ManyToMany
-    @JoinTable(name = "book_authors", joinColumns = {@JoinColumn(name = "book_id")}, inverseJoinColumns = {@JoinColumn(name = "author_id")})
-    private List<Author> authors;
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name = "book_authors", joinColumns = {@JoinColumn(name = "book_id")}, inverseJoinColumns = {@JoinColumn(name = "author_id")})
+//    private List<Author> authors = new ArrayList<Author>();
 
 
+    @CollectionOfElements
     private List<String> authorNames;
 
     public Integer getId() {

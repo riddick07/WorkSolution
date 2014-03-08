@@ -17,10 +17,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AuthorListController extends GeneralController {
 
-//    @Autowired
-//    private IAuthorService authorService;
+    @Autowired
+    private IAuthorService authorService;
 
-    @Override
     public String getModelName() {
         return "AuthorList";
     }
@@ -29,19 +28,8 @@ public class AuthorListController extends GeneralController {
     protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
         Map<String, Object> model = new HashMap<String, Object>();
 
-        List<Author> authors = new ArrayList<Author>();
-        Author author = new Author();
-        author.setName("Holkings");
-        author.setSurname("tel");
-        authors.add(author);
-
-        //TODO: Display list of authors
-
-//        authorService.addAuthor(author);
-
-//        List<Author> all = authorService.listAuthor();
-
-        model.put("authors", authors);
+        List<Author> all = authorService.listAuthor();
+        model.put("authors", all);
 
         return new ModelAndView(getModelName(), "model", model);
     }

@@ -14,7 +14,7 @@
        cellspacing="0">
     <tr border="0" align="center" valign="middle">
         <td>
-            <h2>Редактирование книги</h2>
+            <h2>Редактирование автора</h2>
         </td>
     </tr>
 </table>
@@ -25,7 +25,8 @@
                 <td align="left">
                     <a href="${pageContext.request.contextPath}/pages/HomePage.vw"> Домашняя страница </a>
                     &nbsp > &nbsp
-                    <a href="${pageContext.request.contextPath}/BookList.vw"> Список книг </a> &nbsp > &nbsp Редактирование книги
+                    <a href="${pageContext.request.contextPath}/pages/AuthorList.vw"> Список авторов </a> &nbsp > &nbsp
+                    Редактирование авторов
                 </td>
                 <td>
                     <a href="j_spring_security_logout"> Выйти </a>
@@ -33,27 +34,18 @@
             </tr>
         </table>
 
-        <form:form method="POST" commandName="book">
+        <form:form method="POST" commandName="author">
+
             <br>
-            Введите новое имя:
+            Введите новое имя автора
             <br>
             <form:input class="form-control" path="name"/>
             <br>
-            Введите новое описание:
+            Введите новую фамилию автора
             <br>
-            <form:input class="form-control" path="description"/>
-            <br>
-            Введите год издания:
-            <br>
-            <form:input class="form-control" path="year"/>
-            <br>
-            Выберите авторов:
+            <form:input class="form-control" path="surname"/>
             <br>
 
-            <form:select path="authorNames" onchange="submitForm()">
-                <form:options items="${authorNames}" />
-            </form:select>
-            <br>
             <input type="submit" value="Изменить"/>
         </form:form>
     </div>

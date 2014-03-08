@@ -62,10 +62,11 @@
             <td>${book.name}</td>
             <td>${book.description}</td>
             <td>${book.year}</td>
-            <td>${book.authorNames}</td>
+            <td></td>
+            <%--<td>${book.authorNames}</td>--%>
             <td>
                 <a href="${pageContext.request.contextPath}/EditBook.vw">Модифицировать</a>
-                <a href="${pageContext.request.contextPath}/pages/BookList.vw">Удаление</a>
+                <a href="${pageContext.request.contextPath}/BookList.vw">Удаление</a>
             </td>
         </tr>
     </c:forEach>

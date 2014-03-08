@@ -47,9 +47,11 @@
         <tr align="left" height="100%">
             <td>${a.name}</td>
             <td>${a.surname}</td>
-            <td><a href="${pageContext.request.contextPath}/EditBook.vw">Модифицировать</a>
+            <td>
+                <a href="${pageContext.request.contextPath}/EditAuthor.vw">Модифицировать</a>
                 <a href="${pageContext.request.contextPath}/pages/AuthorList.vw">Удаление</a>
-                <a href="${pageContext.request.contextPath}/pages/BookList.vw">Список книг</a></td>
+                <a href="${pageContext.request.contextPath}/BookList.vw">Список книг</a>
+            </td>
         </tr>
     </c:forEach>
 </table>

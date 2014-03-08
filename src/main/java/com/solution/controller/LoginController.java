@@ -1,6 +1,7 @@
 package com.solution.controller;
 
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+@Controller
 public class LoginController extends GeneralController {
     @Override
     public String getModelName() {

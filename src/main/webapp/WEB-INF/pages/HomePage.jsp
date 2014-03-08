@@ -21,7 +21,7 @@
     <tr align="right">
         <td align="left">
             <h1>
-                <a href="${pageContext.request.contextPath}/pages/BookList.vw"> Список книг </a>
+                <a href="${pageContext.request.contextPath}/BookList.vw"> Список книг </a>
             </h1>
         </td>
         <td>

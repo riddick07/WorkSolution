@@ -2,6 +2,10 @@ package com.solution.controller;
 
 import com.solution.model.Author;
 import com.solution.model.Book;
+import com.solution.service.IAuthorService;
+import com.solution.service.IBookService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 
@@ -12,7 +16,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Controller
 public class EditBookController extends SimpleFormController {
+
+    @Autowired
+    private IBookService bookService;
+
+    @Autowired
+    private IAuthorService authorService;
+
 
     public String getModelName() {
         return "EditBook";
@@ -28,8 +40,10 @@ public class EditBookController extends SimpleFormController {
 
         Map<String, Object> referenceData = new HashMap<String, Object>();
         List<String> authors = new ArrayList<String>();
-        authors.add("Alex");
-        //TODO: Get authors from service
+        List<Author> authorList = authorService.listAuthor();
+        for (Author author : authorList) {
+            authors.add(author.getFullName());
+        }
         referenceData.put("authorNames", authors);
 
         return referenceData;
@@ -38,11 +52,12 @@ public class EditBookController extends SimpleFormController {
     @Override
     protected ModelAndView onSubmit(Object command) throws Exception {
         Book book = (Book) command;
+        bookService.addBook(book);
 
-        //TODO: save Book
-//        authorService.addAuthor(author);
-
-        return new ModelAndView("BookList", "book", book);
+        Map<String, Object> model = new HashMap<String, Object>();
+        List<Book> books = bookService.listBooks();
+        model.put("books", books);
+        return new ModelAndView("BookList", "model", model);
     }
 
 }

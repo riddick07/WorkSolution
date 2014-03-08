@@ -10,6 +10,14 @@
 
 </head>
 <body>
+<table border="1" width="100%" height="12%" cellpadding="0"
+       cellspacing="0">
+    <tr border="0" align="center" valign="middle">
+        <td>
+            <h2>Добавление нового автора</h2>
+        </td>
+    </tr>
+</table>
 <div class="wrapper">
     <div class="span9">
 
@@ -26,7 +34,12 @@
         </table>
 
         <form:form method="POST" commandName="author">
+            <br>
+            Введите имя
+            <br>
             <form:input class="form-control" path="name"/>
+            <br>
+            Введите фамилию
             <br>
             <form:input class="form-control" path="surname"/>
             <br>

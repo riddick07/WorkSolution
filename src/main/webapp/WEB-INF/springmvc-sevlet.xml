@@ -17,6 +17,7 @@
                 <prop key="**/BookList.vw">BookListController</prop>
                 <prop key="**/Login.vw">LoginController</prop>
                 <prop key="**/EditBook.vw">EditBookController</prop>
+                <prop key="**/EditAuthor.vw">EditAuthorController</prop>
                 <prop key="**/AddBook.vw">AddBookController</prop>
                 <prop key="**/HomePage.vw">HomePageController</prop>
                 <prop key="**/AddAuthor.vw">AddAuthorController</prop>
@@ -25,8 +26,12 @@
         </property>
     </bean>
 
+    <context:annotation-config />
+    <context:component-scan base-package="com.solution" />
+
+
     <!-- JSP view resolver -->
-    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+    <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:viewClass="org.springframework.web.servlet.view.JstlView"
           p:prefix="/WEB-INF/pages/"
           p:suffix=".jsp"/>
@@ -34,20 +39,12 @@
     <bean name="BookListController" class="com.solution.controller.BookListController"/>
     <bean name="LoginController" class="com.solution.controller.LoginController"/>
     <bean name="EditBookController" class="com.solution.controller.EditBookController"/>
+    <bean name="EditAuthorController" class="com.solution.controller.EditAuthorController"/>
     <bean name="AddBookController" class="com.solution.controller.AddBookController"/>
     <bean name="AuthorListController" class="com.solution.controller.AuthorListController"/>
     <bean name="HomePageController" class="com.solution.controller.HomePageController"/>
     <bean name="AddAuthorController" class="com.solution.controller.AddAuthorController"/>
 
-    <context:annotation-config />
-
-    <!-- Определяем папки, в которых будем автоматически искать бины-компоненты (@Component, @Service)  -->
-    <!--<context:component-scan base-package="com.solution.dao" />-->
-    <!--<context:component-scan base-package="com.solution.service" />-->
-
-    <!--<import resource="data.xml" />-->
-
-    <!--<bean id="authorService" class="com.solution.service.AuthorService" />-->
-    <!--<bean id="bookService" class="com.solution.service.BookService" />-->
+    <import resource="data.xml" />
 
 </beans>
