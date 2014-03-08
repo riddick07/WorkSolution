@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +25,7 @@
             &nbsp > &nbsp Список книг
         </td>
         <td>
-            <a href="j_spring_security_logout"> Выйти </a>
+            <h4><a href="j_spring_security_logout"> Выйти </a></h4>
         </td>
     </tr>
 </table>
@@ -42,9 +43,11 @@
     </form:form>
 </tr>
 
-<form action="${pageContext.request.contextPath}/AddBook.vw">
-    <input type="submit" value="Создать книгу"/>
-</form>
+<sec:authorize access="hasRole('ROLE_ADMIN')">
+    <form action="${pageContext.request.contextPath}/AddBook.vw">
+        <input type="submit" value="Создать книгу"/>
+    </form>
+</sec:authorize>
 
 
 <table border="1" valign="bottom" align="left" cellspacing="0"
@@ -54,7 +57,9 @@
         <td bgcolor="#778899">Brief description</td>
         <td bgcolor="#778899">Publishing year</td>
         <td bgcolor="#778899">Авторы</td>
-        <td bgcolor="#778899">Действия над книгами</td>
+        <sec:authorize access="hasRole('ROLE_ADMIN')">
+            <td bgcolor="#778899">Действия над книгами</td>
+        </sec:authorize>
     </tr>
 
     <c:forEach items="${model.books}" var="book">
@@ -63,11 +68,13 @@
             <td>${book.description}</td>
             <td>${book.year}</td>
             <td></td>
-            <%--<td>${book.authorNames}</td>--%>
-            <td>
-                <a href="${pageContext.request.contextPath}/EditBook.vw">Модифицировать</a>
-                <a href="${pageContext.request.contextPath}/BookList.vw">Удаление</a>
-            </td>
+                <%--<td>${book.authorNames}</td>--%>
+            <sec:authorize access="hasRole('ROLE_ADMIN')">
+                <td>
+                    <a href="${pageContext.request.contextPath}/EditBook.vw">Модифицировать</a>
+                    <a href="${pageContext.request.contextPath}/BookList.vw">Удаление</a>
+                </td>
+            </sec:authorize>
         </tr>
     </c:forEach>
 </table>

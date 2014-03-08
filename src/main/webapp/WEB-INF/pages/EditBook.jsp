@@ -28,7 +28,7 @@
                     <a href="${pageContext.request.contextPath}/BookList.vw"> Список книг </a> &nbsp > &nbsp Редактирование книги
                 </td>
                 <td>
-                    <a href="j_spring_security_logout"> Выйти </a>
+                    <h4><a href="j_spring_security_logout"> Выйти </a></h4>
                 </td>
             </tr>
         </table>

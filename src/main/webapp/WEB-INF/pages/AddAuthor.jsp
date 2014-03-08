@@ -26,9 +26,9 @@
                 <td align="left">
                     <a href="${pageContext.request.contextPath}/pages/HomePage.vw"> Домашняя страница </a>
                     &nbsp > &nbsp
-                    <a href="${pageContext.request.contextPath}/pages/AuthorList.vw"> Список авторов </a> &nbsp > &nbsp Создание автора</td>
+                    <a href="${pageContext.request.contextPath}/AuthorList.vw"> Список авторов </a> &nbsp > &nbsp Создание автора</td>
                 <td>
-                    <a href="j_spring_security_logout"> Выйти </a>
+                    <h4><a href="j_spring_security_logout"> Выйти </a></h4>
                 </td>
             </tr>
         </table>

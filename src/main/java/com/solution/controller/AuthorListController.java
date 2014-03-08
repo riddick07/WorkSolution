@@ -9,13 +9,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.solution.model.Author;
+import com.solution.model.Book;
 import com.solution.service.IAuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.SimpleFormController;
 
 @Controller
-public class AuthorListController extends GeneralController {
+public class AuthorListController extends SimpleFormController {
 
     @Autowired
     private IAuthorService authorService;
@@ -31,6 +33,35 @@ public class AuthorListController extends GeneralController {
         List<Author> all = authorService.listAuthor();
         model.put("authors", all);
 
+        return new ModelAndView(getModelName(), "model", model);
+    }
+
+    public AuthorListController() {
+        setCommandClass(Book.class);
+        setCommandName("book");
+    }
+
+    @Override
+    protected Map<String, Object> referenceData(HttpServletRequest request) throws Exception {
+
+        Map<String, Object> refData = new HashMap<String, Object>();
+        Map<String, Object> model = new HashMap<String, Object>();
+
+        List<Author> all = authorService.listAuthor();
+        model.put("authors", all);
+        refData.put("model", model);
+
+        return refData;
+    }
+
+    @Override
+    protected ModelAndView onSubmit(Object command) throws Exception {
+        Author author = (Author) command;
+        authorService.addAuthor(author);
+
+        Map<String, Object> model = new HashMap<String, Object>();
+        List<Author> all = authorService.listAuthor();
+        model.put("authors", all);
         return new ModelAndView(getModelName(), "model", model);
     }
 

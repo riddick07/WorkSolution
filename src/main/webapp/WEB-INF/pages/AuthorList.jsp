@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,15 +25,17 @@
             &nbsp > &nbsp Список авторов
         </td>
         <td>
-            <a href="j_spring_security_logout"> Выйти </a>
+            <h4><a href="j_spring_security_logout"> Выйти </a></h4>
         </td>
     </tr>
 </table>
 <br/>
 
-<form action="${pageContext.request.contextPath}/AddAuthor.vw">
-    <input type="submit" value="Создать автора"/>
-</form>
+<sec:authorize access="hasRole('ROLE_ADMIN')">
+    <form action="${pageContext.request.contextPath}/AddAuthor.vw">
+        <input type="submit" value="Создать автора"/>
+    </form>
+</sec:authorize>
 
 <table border="1" valign="bottom" align="left" cellspacing="0"
        cellpadding="5" width="100%">
@@ -48,9 +51,13 @@
             <td>${a.name}</td>
             <td>${a.surname}</td>
             <td>
-                <a href="${pageContext.request.contextPath}/EditAuthor.vw">Модифицировать</a>
-                <a href="${pageContext.request.contextPath}/pages/AuthorList.vw">Удаление</a>
+                <sec:authorize access="hasRole('ROLE_ADMIN')">
+                    <a href="${pageContext.request.contextPath}/EditAuthor.vw">Модифицировать</a>
+                    <a href="${pageContext.request.contextPath}/AuthorList.vw">Удаление</a>
+                </sec:authorize>
                 <a href="${pageContext.request.contextPath}/BookList.vw">Список книг</a>
+            </td>
+
             </td>
         </tr>
     </c:forEach>

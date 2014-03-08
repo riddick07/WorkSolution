@@ -30,7 +30,7 @@
                     Создать книгу
                 </td>
                 <td>
-                    <a href="j_spring_security_logout"> Выйти </a>
+                    <h4><a href="j_spring_security_logout"> Выйти </a></h4>
                 </td>
             </tr>
         </table>

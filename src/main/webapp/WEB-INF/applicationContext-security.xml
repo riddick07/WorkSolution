@@ -8,13 +8,13 @@
     <http create-session="never" auto-config="true">
         <form-login login-page="/Login.vw" authentication-failure-url="/Login.vw?failed=true" default-target-url="/pages/HomePage.vw" />
         <intercept-url pattern="/Login.vw" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-        <intercept-url pattern="/BookList.vw" access="ROLE_USER" />
         <intercept-url pattern="/lib/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <intercept-url pattern="/js/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <intercept-url pattern="/css/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <intercept-url pattern="/img/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-        <intercept-url pattern="/*/*.vw" access="ROLE_ADMIN" />
-        <logout logout-url="/pages/j_spring_security_logout" logout-success-url="/Login.vw" invalidate-session="true" />
+        <intercept-url pattern="/*/*.vw" access="ROLE_USER" />
+        <intercept-url pattern="/*.vw" access="ROLE_USER" />
+        <logout logout-url="/j_spring_security_logout" logout-success-url="/Login.vw" invalidate-session="true" />
     </http>
 
     <!--     for metods security -->
