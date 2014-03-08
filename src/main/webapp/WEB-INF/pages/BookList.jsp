@@ -31,17 +31,19 @@
 </table>
 <br/>
 
-<tr>
-    <form:form method="POST" commandName="book">
-        <td>Введите название книги</td>
-        <td>
-            <form:input class="form-control" path="name"/>
-        </td>
-        <td>
-            <input type="submit" value="Искать"/>
-        </td>
-    </form:form>
-</tr>
+<form:form method="POST" commandName="book">
+    <table border="0" width="span4" cellpadding="0" cellspacing="0">
+        <tr>
+            <td style="padding-right: 2em; vertical-align: middle">Введите название книги</td>
+            <td style="padding-right: 2em">
+                <input type="text" class="form-control" path="name"/>
+            </td>
+            <td>
+                <input type="submit" value="Искать"/>
+            </td>
+        </tr>
+    </table>
+</form:form>
 
 <sec:authorize access="hasRole('ROLE_ADMIN')">
     <form action="${pageContext.request.contextPath}/AddBook.vw">
