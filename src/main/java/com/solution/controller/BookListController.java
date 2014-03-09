@@ -55,14 +55,15 @@ public class BookListController extends SimpleFormController {
         return new ModelAndView(getModelName(), "model", model);
     }
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    public String delete(@PathVariable Integer id) {
+    @RequestMapping(value = "/delete/{strId}", method = RequestMethod.GET)
+    public String delete(@PathVariable String strId) {
+        Integer id = Integer.parseInt(strId);
         bookService.removeBook(id);
         return "redirect:BookList";
     }
 
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
-    public ModelAndView edit(@PathVariable Integer id) {
+    public ModelAndView edit(@PathVariable String id) {
         Map<String, Object> model = new HashMap<String, Object>();
         model.put("id", id);
         return new ModelAndView("EditBook", "model", model);

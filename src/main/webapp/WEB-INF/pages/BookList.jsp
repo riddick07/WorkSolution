@@ -75,8 +75,8 @@
                 <%--<td>${book.authorNames}</td>--%>
             <sec:authorize access="hasRole('ROLE_ADMIN')">
                 <td>
-                    <a href="${pageContext.request.contextPath}/edit/${book.id}">Модифицировать</a>
-                    <a href="${pageContext.request.contextPath}/delete/${book.id}">Удаление</a>
+                    <a href="${pageContext.request.contextPath}/books/edit/${book.id}">Модифицировать</a>
+                    <a href="${pageContext.request.contextPath}/books/delete/${book.id}">Удаление</a>
                 </td>
             </sec:authorize>
         </tr>

@@ -1,6 +1,7 @@
 package com.solution.dao;
 
 import com.solution.model.Author;
+import com.solution.model.Book;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -30,6 +31,14 @@ public class AuthorDao implements IAuthorDao {
         Author contact = (Author) sessionFactory.getCurrentSession().load(Author.class, id);
         if (null != contact) {
             sessionFactory.getCurrentSession().delete(contact);
+        }
+    }
+
+    @Override
+    public void updateAuthor(Author author) {
+        author = (Author) sessionFactory.getCurrentSession().load(Author.class, author.getId());
+        if (null != author) {
+            sessionFactory.getCurrentSession().update(author);
         }
     }
 }

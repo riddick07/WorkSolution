@@ -31,4 +31,12 @@ public class BookDao implements IBookDao {
             sessionFactory.getCurrentSession().delete(book);
         }
     }
+
+    @Override
+    public void updateBook(Book book) {
+        book = (Book) sessionFactory.getCurrentSession().load(Book.class, book.getId());
+        if (null != book) {
+            sessionFactory.getCurrentSession().update(book);
+        }
+    }
 }
