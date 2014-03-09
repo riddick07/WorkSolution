@@ -12,7 +12,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface IBookDao {
-    void addBook(Book book);
+    Book addBook(Book book);
 
     List<Book> listBooks();
 

@@ -15,8 +15,9 @@ public class AuthorDao implements IAuthorDao {
     private SessionFactory sessionFactory;
 
     @Override
-    public void addAuthor(Author author) {
+    public Author addAuthor(Author author) {
         sessionFactory.getCurrentSession().save(author);
+        return author;
     }
 
     @Override

@@ -14,8 +14,9 @@ public class BookDao implements IBookDao {
     private SessionFactory sessionFactory;
 
     @Override
-    public void addBook(Book book) {
+    public Book addBook(Book book) {
         sessionFactory.getCurrentSession().save(book);
+        return book;
     }
 
     @Override

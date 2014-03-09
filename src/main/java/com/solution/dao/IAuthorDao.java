@@ -12,7 +12,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface IAuthorDao {
-    void addAuthor(Author author);
+    Author addAuthor(Author author);
 
     List<Author> listAuthors();
 

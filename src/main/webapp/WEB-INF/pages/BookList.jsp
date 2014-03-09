@@ -45,11 +45,13 @@
     </table>
 </form:form>
 
-<sec:authorize access="hasRole('ROLE_ADMIN')">
-    <form action="${pageContext.request.contextPath}/AddBook.vw">
-        <input type="submit" value="Создать книгу"/>
-    </form>
-</sec:authorize>
+<div style="text-align: right">
+    <sec:authorize access="hasRole('ROLE_ADMIN')">
+        <form action="${pageContext.request.contextPath}/AddBook.vw">
+            <input type="submit" value="Создать книгу"/>
+        </form>
+    </sec:authorize>
+</div>
 
 
 <table border="1" valign="bottom" align="left" cellspacing="0"
@@ -73,8 +75,8 @@
                 <%--<td>${book.authorNames}</td>--%>
             <sec:authorize access="hasRole('ROLE_ADMIN')">
                 <td>
-                    <a href="${pageContext.request.contextPath}/EditBook.vw">Модифицировать</a>
-                    <a href="${pageContext.request.contextPath}/BookList.vw">Удаление</a>
+                    <a href="${pageContext.request.contextPath}/edit/${book.id}">Модифицировать</a>
+                    <a href="${pageContext.request.contextPath}/delete/${book.id}">Удаление</a>
                 </td>
             </sec:authorize>
         </tr>
