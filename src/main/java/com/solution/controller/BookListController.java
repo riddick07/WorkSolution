@@ -29,6 +29,7 @@ public class BookListController {
     public BookListController() {
     }
 
+    @RequestMapping(method = RequestMethod.GET)
     protected ModelAndView openMain(HttpServletRequest request, HttpServletResponse response) throws Exception {
         Map<String, Object> model = new HashMap<String, Object>();
         List<Book> books = bookService.listBooks();

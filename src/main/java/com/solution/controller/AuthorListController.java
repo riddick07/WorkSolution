@@ -14,12 +14,13 @@ import com.solution.service.IAuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 
 @Controller
 @RequestMapping("/AuthorList.vw")
-public class AuthorListController extends SimpleFormController {
+public class AuthorListController {
 
     @Autowired
     private IAuthorService authorService;
@@ -28,7 +29,7 @@ public class AuthorListController extends SimpleFormController {
         return "AuthorList";
     }
 
-    @Override
+    @RequestMapping(method = RequestMethod.GET)
     protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
         Map<String, Object> model = new HashMap<String, Object>();
 
@@ -38,33 +39,5 @@ public class AuthorListController extends SimpleFormController {
         return new ModelAndView(getModelName(), "model", model);
     }
 
-    public AuthorListController() {
-        setCommandClass(Book.class);
-        setCommandName("book");
-    }
-
-    @Override
-    protected Map<String, Object> referenceData(HttpServletRequest request) throws Exception {
-
-        Map<String, Object> refData = new HashMap<String, Object>();
-        Map<String, Object> model = new HashMap<String, Object>();
-
-        List<Author> all = authorService.listAuthor();
-        model.put("authors", all);
-        refData.put("model", model);
-
-        return refData;
-    }
-
-    @Override
-    protected ModelAndView onSubmit(Object command) throws Exception {
-        Author author = (Author) command;
-        authorService.addAuthor(author);
-
-        Map<String, Object> model = new HashMap<String, Object>();
-        List<Author> all = authorService.listAuthor();
-        model.put("authors", all);
-        return new ModelAndView(getModelName(), "model", model);
-    }
 
 }
