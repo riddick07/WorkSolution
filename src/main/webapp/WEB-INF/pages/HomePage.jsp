@@ -30,7 +30,7 @@
     </tr>
     <tr>
         <h1>
-            <a href="${pageContext.request.contextPath}/pages/AuthorList.vw"> Список авторов </a>
+            <a href="${pageContext.request.contextPath}/AuthorList.vw"> Список авторов </a>
         </h1>
     </tr>
 </table>

@@ -21,7 +21,7 @@
 <table border="0" width="100%" cellpadding="0" cellspacing="0">
     <tr align="right">
         <td align="left">
-            <a href="${pageContext.request.contextPath}/pages/HomePage.vw"> Домашняя страница </a>
+            <a href="${pageContext.request.contextPath}/HomePage.vw"> Домашняя страница </a>
             &nbsp > &nbsp Список книг
         </td>
         <td>
@@ -75,8 +75,8 @@
                 <%--<td>${book.authorNames}</td>--%>
             <sec:authorize access="hasRole('ROLE_ADMIN')">
                 <td>
-                    <a href="${pageContext.request.contextPath}/books/edit/${book.id}">Модифицировать</a>
-                    <a href="${pageContext.request.contextPath}/books/delete/${book.id}">Удаление</a>
+                    <a href="${pageContext.request.contextPath}/BookList.vw/edit/${book.id}">Модифицировать</a>
+                    <a href="${pageContext.request.contextPath}/BookList.vw/delete/${book.id}">Удаление</a>
                 </td>
             </sec:authorize>
         </tr>

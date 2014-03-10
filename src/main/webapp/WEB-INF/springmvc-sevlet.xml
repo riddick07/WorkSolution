@@ -10,25 +10,12 @@
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <!-- Controller mappings -->
-    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-        <property name="mappings">
-            <props>
-                <prop key="**/BookList.vw">BookListController</prop>
-                <prop key="**/Login.vw">LoginController</prop>
-                <prop key="**/EditBook.vw">EditBookController</prop>
-                <prop key="**/EditAuthor.vw">EditAuthorController</prop>
-                <prop key="**/AddBook.vw">AddBookController</prop>
-                <prop key="**/HomePage.vw">HomePageController</prop>
-                <prop key="**/AddAuthor.vw">AddAuthorController</prop>
-                <prop key="**/AuthorList.vw">AuthorListController</prop>
-            </props>
-        </property>
-    </bean>
+    <context:annotation-config/>
+    <context:component-scan base-package="com.solution"/>
 
-    <context:annotation-config />
-    <context:component-scan base-package="com.solution" />
-
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
 
     <!-- JSP view resolver -->
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
@@ -36,15 +23,6 @@
           p:prefix="/WEB-INF/pages/"
           p:suffix=".jsp"/>
 
-    <bean name="BookListController" class="com.solution.controller.BookListController"/>
-    <bean name="LoginController" class="com.solution.controller.LoginController"/>
-    <bean name="EditBookController" class="com.solution.controller.EditBookController"/>
-    <bean name="EditAuthorController" class="com.solution.controller.EditAuthorController"/>
-    <bean name="AddBookController" class="com.solution.controller.AddBookController"/>
-    <bean name="AuthorListController" class="com.solution.controller.AuthorListController"/>
-    <bean name="HomePageController" class="com.solution.controller.HomePageController"/>
-    <bean name="AddAuthorController" class="com.solution.controller.AddAuthorController"/>
-
-    <import resource="data.xml" />
+    <import resource="data.xml"/>
 
 </beans>
