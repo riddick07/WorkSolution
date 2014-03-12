@@ -13,7 +13,7 @@
        cellspacing="0">
     <tr border="0" align="center" valign="middle">
         <td>
-            <h2>Список авторов</h2>
+            <h2>Книжный каталог</h2>
         </td>
     </tr>
 </table>
@@ -21,7 +21,7 @@
 <table border="0" width="100%" cellpadding="0" cellspacing="0">
     <tr align="right">
         <td align="left">
-            <a href="${pageContext.request.contextPath}/HomePage.vw"> Домашняя страница </a>
+            <a href="${pageContext.request.contextPath}/HomePage.vw"> Главная </a>
             &nbsp > &nbsp Список авторов
         </td>
         <td>
@@ -31,17 +31,24 @@
 </table>
 <br/>
 
-<sec:authorize access="hasRole('ROLE_ADMIN')">
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+    <tr align="right">
+    <td align="left">
+    <h3>Список авторов</h3>
+    </td>
+        <td ><sec:authorize access="hasRole('ROLE_ADMIN')">
     <form action="${pageContext.request.contextPath}/AddAuthor.vw">
         <input type="submit" value="Создать автора"/>
     </form>
-</sec:authorize>
+</sec:authorize></td> </tr></table>
+
+
 
 <table border="1" valign="bottom" align="left" cellspacing="0"
        cellpadding="5" width="100%">
     <tr border="0" align="left" height="20%">
-        <td bgcolor="#778899">Name</td>
-        <td bgcolor="#778899">Surname</td>
+        <td bgcolor="#778899">Имя</td>
+        <td bgcolor="#778899">Фамилия</td>
         <td bgcolor="#778899">Действия</td>
     </tr>
 
@@ -53,7 +60,7 @@
             <td>
                 <sec:authorize access="hasRole('ROLE_ADMIN')">
                     <a href="${pageContext.request.contextPath}/EditAuthor.vw">Модифицировать</a>
-                    <a href="${pageContext.request.contextPath}/AuthorList.vw">Удаление</a>
+                    <a href="${pageContext.request.contextPath}/AuthorList.vw">Удалить</a>
                 </sec:authorize>
                 <a href="${pageContext.request.contextPath}/BookList.vw">Список книг</a>
             </td>

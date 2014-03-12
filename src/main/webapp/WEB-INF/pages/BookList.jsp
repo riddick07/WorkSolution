@@ -13,7 +13,7 @@
        cellspacing="0">
     <tr border="0" align="center" valign="middle">
         <td>
-            <h2>Список книг</h2>
+            <h2>Книжный каталог</h2>
         </td>
     </tr>
 </table>
@@ -21,11 +21,11 @@
 <table border="0" width="100%" cellpadding="0" cellspacing="0">
     <tr align="right">
         <td align="left">
-            <a href="${pageContext.request.contextPath}/HomePage.vw"> Домашняя страница </a>
+            <a href="${pageContext.request.contextPath}/HomePage.vw"> <u>Главная</u> </a>
             &nbsp > &nbsp Список книг
         </td>
         <td>
-            <h4><a href="j_spring_security_logout"> Выйти </a></h4>
+            <h4><a href="j_spring_security_logout"> <u>Выйти</u> </a></h4>
         </td>
     </tr>
 </table>
@@ -39,7 +39,7 @@
                 <input type="text" class="form-control" path="name"/>
             </td>
             <td>
-                <input type="submit" value="Искать"/>
+                <input type="submit" value="Искать книгу"/>
             </td>
         </tr>
     </table>
@@ -48,7 +48,7 @@
 <div style="text-align: right">
     <sec:authorize access="hasRole('ROLE_ADMIN')">
         <form action="${pageContext.request.contextPath}/AddBook.vw">
-            <input type="submit" value="Создать книгу"/>
+            <input type="submit" value="Создать новую книгу"/>
         </form>
     </sec:authorize>
 </div>
@@ -57,9 +57,9 @@
 <table border="1" valign="bottom" align="left" cellspacing="0"
        cellpadding="5" width="100%">
     <tr border="0" align="left" height="20%">
-        <td bgcolor="#778899">Name</td>
-        <td bgcolor="#778899">Brief description</td>
-        <td bgcolor="#778899">Publishing year</td>
+        <td bgcolor="#778899">Название</td>
+        <td bgcolor="#778899">Краткое описание</td>
+        <td bgcolor="#778899">Год издания</td>
         <td bgcolor="#778899">Авторы</td>
         <sec:authorize access="hasRole('ROLE_ADMIN')">
             <td bgcolor="#778899">Действия над книгами</td>

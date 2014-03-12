@@ -38,16 +38,16 @@ public class BookListController {
         return new ModelAndView(getModelName(), "model", model);
     }
 
-//    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
-//    public ModelAndView edit(@RequestParam("id") String id) {
-//        Map<String, Object> model = new HashMap<String, Object>();
-//        model.put("id", id);
-//        return new ModelAndView("EditBook", "model", model);
-//    }
-
+//  @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+//  public ModelAndView edit(@RequestParam("id") String id) {
+//       Map<String, Object> model = new HashMap<String, Object>();
+//      model.put("id", id);
+//       return new ModelAndView("EditBook", "model", model);
+//  }
+//
 //    @RequestMapping(value = {"/delete/{id}"})
 //    public ModelAndView delete(@PathVariable("id") Integer id) {
-//        bookService.removeBook(id);
+//       bookService.removeBook(id);
 //        return new ModelAndView(getModelName());
-//    }
+//   }
 }
