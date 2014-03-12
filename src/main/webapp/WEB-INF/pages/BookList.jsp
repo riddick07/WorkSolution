@@ -7,6 +7,64 @@
     <title></title>
     <jsp:include page="/WEB-INF/pages/includes/jslib.jsp"/>
     <jsp:include page="/WEB-INF/pages/includes/css.jsp"/>
+
+    <script type="text/javascript">
+
+        var contexPath = "${pageContext.request.contextPath}/";
+        function deleteFunc(id) {
+            console.log(id);
+            $.ajax({
+                datatype: "json",
+                type: "DELETE",
+                url: contexPath + "BookList.vw/delete/" + id,
+                dataType: "application/json",
+                contentType: "application/json",
+                data: {"ids": id},
+                success: function (response) {
+                    alert('Response: ' + response);
+                },
+                error: function (e) {
+                    alert('Error: ' + e);
+                }
+            });
+        }
+
+        function modifyFunc(id) {
+            console.log(id);
+            $.ajax({
+                datatype: "json",
+                type: "POST",
+                url: contexPath + "EditBook.vw",
+                dataType: "application/json",
+                contentType: "application/json",
+                data: {"id": id},
+                success: function (response) {
+                    alert('Response: ' + response);
+                },
+                error: function (e) {
+                    alert('Error: ' + e);
+                }
+            });
+        }
+
+        function searchFunc(id) {
+            console.log(id);
+            $.ajax({
+                datatype: "json",
+                type: "PUT",
+                url: contexPath + "BookList.vw/search",
+                dataType: "application/json",
+                contentType: "application/json",
+                data: {"name": $('#searchName').val()},
+                success: function (response) {
+                    alert('Response: ' + response);
+                },
+                error: function (e) {
+                    alert('Error: ' + e);
+                }
+            });
+        }
+    </script>
 </head>
 <body>
 <table border="1" width="100%" height="12%" cellpadding="0"
@@ -31,19 +89,17 @@
 </table>
 <br/>
 
-<form:form method="POST" commandName="book">
-    <table border="0" width="span4" cellpadding="0" cellspacing="0">
-        <tr>
-            <td style="padding-right: 2em; vertical-align: middle">Введите название книги</td>
-            <td style="padding-right: 2em">
-                <input type="text" class="form-control" path="name"/>
-            </td>
-            <td>
-                <input type="submit" value="Искать"/>
-            </td>
-        </tr>
-    </table>
-</form:form>
+<table border="0" width="span4" cellpadding="0" cellspacing="0">
+    <tr>
+        <td style="padding-right: 2em; vertical-align: middle">Введите название книги</td>
+        <td style="padding-right: 2em">
+            <input id="searchName" type="text" class="form-control" path="name"/>
+        </td>
+        <td>
+            <input type="button" onclick="searchFunc()" value="Искать"/>
+        </td>
+    </tr>
+</table>
 
 <div style="text-align: right">
     <sec:authorize access="hasRole('ROLE_ADMIN')">
@@ -75,8 +131,8 @@
                 <%--<td>${book.authorNames}</td>--%>
             <sec:authorize access="hasRole('ROLE_ADMIN')">
                 <td>
-                    <a href="${pageContext.request.contextPath}/BookList.vw/edit/${book.id}">Модифицировать</a>
-                    <a href="${pageContext.request.contextPath}/BookList.vw/delete/${book.id}">Удаление</a>
+                    <input type="button" onclick="modifyFunc(${book.id})" value="Модифицировать">
+                    <input type="button" onclick="deleteFunc(${book.id})" value="Удаление">
                 </td>
             </sec:authorize>
         </tr>

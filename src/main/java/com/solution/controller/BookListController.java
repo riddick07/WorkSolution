@@ -11,6 +11,7 @@ import org.springframework.web.servlet.mvc.SimpleFormController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,16 +39,23 @@ public class BookListController {
         return new ModelAndView(getModelName(), "model", model);
     }
 
-//    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
-//    public ModelAndView edit(@RequestParam("id") String id) {
-//        Map<String, Object> model = new HashMap<String, Object>();
-//        model.put("id", id);
-//        return new ModelAndView("EditBook", "model", model);
-//    }
 
-//    @RequestMapping(value = {"/delete/{id}"})
-//    public ModelAndView delete(@PathVariable("id") Integer id) {
-//        bookService.removeBook(id);
-//        return new ModelAndView(getModelName());
-//    }
+    @RequestMapping(value = "/delete/{ids}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public ModelAndView delete(@PathVariable("ids") int id) throws Exception {
+        bookService.removeBook(id);
+        return new ModelAndView(getModelName());
+    }
+
+    @RequestMapping(value = "/search/{name}", method = RequestMethod.PUT)
+    @ResponseBody
+    public ModelAndView search(@PathVariable("name") String name) throws Exception {
+        Book book = bookService.searchBook(name);
+        List<Book> books = new ArrayList<Book>();
+        books.add(book);
+        Map<String, Object> model = new HashMap<String, Object>();
+        model.put("books", books);
+
+        return new ModelAndView(getModelName(), "model", model);
+    }
 }

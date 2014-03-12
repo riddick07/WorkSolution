@@ -7,6 +7,57 @@
     <title></title>
     <jsp:include page="/WEB-INF/pages/includes/jslib.jsp"/>
     <jsp:include page="/WEB-INF/pages/includes/css.jsp"/>
+
+    <script type="text/javascript">
+        var contexPath = "${pageContext.request.contextPath}/";
+        function deleteFunc(id) {
+            console.log(id);
+            $.ajax({
+                datatype: "json",
+                type: "POST",
+                url: contexPath + "AuthorList.vw/delete",
+                data: {"ids":id},
+                success: function (response) {
+                    alert('Response: ' + response);
+                },
+                error: function (e) {
+                    alert('Error: ' + e);
+                }
+            });
+        }
+
+        function modifyFunc(id) {
+            console.log(id);
+            $.ajax({
+                datatype: "json",
+                type: "POST",
+                url: contexPath + "EditAuthor.vw",
+                data: {"id":id},
+                success: function (response) {
+                    alert('Response: ' + response);
+                },
+                error: function (e) {
+                    alert('Error: ' + e);
+                }
+            });
+        }
+
+        function openBookListFunc(id) {
+            console.log(id);
+            $.ajax({
+                datatype: "json",
+                type: "POST",
+                url: contexPath + "BookList.vw",
+                data: { "id": id },
+                success: function (response) {
+                    alert('Response: ' + response);
+                },
+                error: function (e) {
+                    alert('Error: ' + e);
+                }
+            });
+        }
+    </script>
 </head>
 <body>
 <table border="1" width="100%" height="12%" cellpadding="0"
@@ -52,10 +103,10 @@
             <td>${a.surname}</td>
             <td>
                 <sec:authorize access="hasRole('ROLE_ADMIN')">
-                    <a href="${pageContext.request.contextPath}/EditAuthor.vw">Модифицировать</a>
-                    <a href="${pageContext.request.contextPath}/AuthorList.vw">Удаление</a>
+                    <input type="button" onclick="modifyFunc(${a.id})" value="Модифицировать">
+                    <input type="button" onclick="deleteFunc(${a.id})" value="Удаление">
                 </sec:authorize>
-                <a href="${pageContext.request.contextPath}/BookList.vw">Список книг</a>
+                <input type="button" onclick="openBookListFunc(${a.id})" value="Список книг">
             </td>
 
             </td>

@@ -12,8 +12,10 @@
         <intercept-url pattern="/js/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <intercept-url pattern="/css/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <intercept-url pattern="/img/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-        <intercept-url pattern="/*/*.vw" access="ROLE_USER" />
-        <intercept-url pattern="/*.vw" access="ROLE_USER" />
+        <intercept-url pattern="/*/*.vw" access="ROLE_USER,ROLE_ADMIN" />
+        <intercept-url pattern="/*/*.vw/delete/*" access="ROLE_ADMIN" />
+        <intercept-url pattern="/*.vw" access="ROLE_USER,ROLE_ADMIN" />
+        <intercept-url pattern="/*.vw/delete/*" access="ROLE_ADMIN" />
         <logout logout-url="/j_spring_security_logout" logout-success-url="/Login.vw" invalidate-session="true" />
     </http>
 
@@ -26,7 +28,7 @@
         <authentication-provider>
             <user-service>
                 <user name="user" password="password" authorities="ROLE_USER" />
-                <user name="admin" password="password" authorities="ROLE_USER,ROLE_ADMIN" />
+                <user name="admin" password="password" authorities="ROLE_ADMIN" />
             </user-service>
         </authentication-provider>
     </authentication-manager>

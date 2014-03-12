@@ -14,4 +14,7 @@ public interface IBookService {
 
     @Transactional
     void removeBook(Integer id);
+
+    @Transactional
+    Book searchBook(String name);
 }

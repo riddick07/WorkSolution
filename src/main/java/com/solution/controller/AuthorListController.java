@@ -13,8 +13,7 @@ import com.solution.model.Book;
 import com.solution.service.IAuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 
@@ -29,8 +28,8 @@ public class AuthorListController {
         return "AuthorList";
     }
 
-    @RequestMapping(method = RequestMethod.GET)
-    protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    protected ModelAndView handleRequestInternal() throws Exception {
         Map<String, Object> model = new HashMap<String, Object>();
 
         List<Author> all = authorService.listAuthor();
@@ -39,5 +38,10 @@ public class AuthorListController {
         return new ModelAndView(getModelName(), "model", model);
     }
 
-
+    @RequestMapping(value = "/delete/{ids}", method = RequestMethod.POST)
+    @ResponseBody
+    public ModelAndView delete(@PathVariable("ids") Integer id) throws Exception {
+        authorService.removeAuthor(id);
+        return new ModelAndView(getModelName());
+    }
 }

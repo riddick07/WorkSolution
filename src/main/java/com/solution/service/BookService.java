@@ -32,4 +32,15 @@ public class BookService implements IBookService {
         bookDao.removeBook(id);
     }
 
+
+    public Book searchBook(String name) {
+        List<Book> books = listBooks();
+        for (Book book : books) {
+            if (book.getName().equals(name
+            )) return book;
+        }
+        return null;
+    }
+
+
 }
