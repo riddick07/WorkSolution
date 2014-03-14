@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <head>
-    <title></title>
+    <title>Редактирование автора</title>
 
     <jsp:include page="/WEB-INF/pages/includes/css.jsp"/>
     <jsp:include page="/WEB-INF/pages/includes/jslib.jsp"/>
@@ -34,20 +34,30 @@
             </tr>
         </table>
 
-        <form:form method="POST" commandName="author">
-
+        <form:form id="editForm" method="POST" commandName="author">
             <br>
             Введите новое имя автора
             <br>
-            <form:input class="form-control" path="name"/>
+            <form:input id="name" class="form-control" path="name"/>
             <br>
             Введите новую фамилию автора
             <br>
-            <form:input class="form-control" path="surname"/>
+            <form:input id="surname" class="form-control" path="surname"/>
             <br>
 
-            <input type="submit" value="Изменить"/>
+            <input id="create" type="submit" value="Изменить"/>
         </form:form>
     </div>
 </div>
 </body>
+<script type="text/javascript">
+    $("#create").click(
+            function () {
+                if (($("#surname").val().trim() == "")|| ($("#name").val().trim() == "")) {
+                    alert("Заолните все поля!");
+                    return false;
+                }
+                $("#editForm").submit();
+                return true;
+            });
+</script>

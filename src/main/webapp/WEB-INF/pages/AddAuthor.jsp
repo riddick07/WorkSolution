@@ -33,19 +33,30 @@
             </tr>
         </table>
 
-        <form:form method="POST" commandName="author">
+        <form:form id="createForm" method="POST" commandName="author">
             <br>
             Введите имя
             <br>
-            <form:input class="form-control" path="name"/>
+            <form:input id="name" class="form-control" path="name"/>
             <br>
             Введите фамилию
             <br>
-            <form:input class="form-control" path="surname"/>
+            <form:input id="surname" class="form-control" path="surname"/>
             <br>
 
-            <input type="submit" value="Создать"/>
+            <input id="create" type="button" value="Создать"/>
         </form:form>
     </div>
 </div>
 </body>
+<script type="text/javascript">
+    $("#create").click(
+            function () {
+                if (($("#surname").val().trim() == "")|| ($("#name").val().trim() == "")) {
+                    alert("Заолните все поля!");
+                    return false;
+                }
+                $("#createForm").submit();
+                return true;
+            });
+</script>

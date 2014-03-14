@@ -37,26 +37,26 @@
             </tr>
         </table>
         </br>
-        <form:form method="POST" commandName="book">
+        <form:form id="sendForm" method="POST" commandName="book">
         <table heigth="30%" width="65%" border="0" cellpadding="0" cellspacing="0"><tr>
             <td valign="top" ><h3>Заполните необходимые значения и нажмите кнопку</h3>  </td>
-            <td valign="bottom" > &nbsp <input type="submit" value="Создать"/></td></tr>
+            <td valign="bottom" > &nbsp <input id="create" type="button" value="Создать"/></td></tr>
              </table>
             <table border="0">
         <tr><td>
             Название:</td>
             
-            <td><form:input class="form-control" path="name"/></td>
+            <td><form:input id="name" class="form-control" path="name"/></td>
             </tr><br>
            <tr> <td>Краткое описание:</td>
             
-            <td ><form:input class="form-control" path="description"/></td>
+            <td ><form:input id="description" class="form-control" path="description"/></td>
             </tr>
             <br>
             <tr>
            <td> Год издания:</td>
             
-           <td> <form:input class="form-control" path="year"/></td>
+           <td> <form:input id="year" class="form-control" path="year"/></td>
             <br>
             </tr>
            <tr><td> Выберите автора:</td>
@@ -70,3 +70,15 @@
     </div>
 </div>
 </body>
+
+<script type="text/javascript">
+    $("#create").click(
+            function () {
+                if (($("#year").val().trim() == "")|| ($("#name").val().trim() == "")|| ($("#description").val().trim() == "")) {
+                    alert("Заолните все поля!");
+                    return false;
+                }
+                $("#sendForm").submit();
+                return true;
+            });
+</script>

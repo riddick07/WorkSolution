@@ -33,19 +33,19 @@
             </tr>
         </table>
 
-        <form:form method="POST" commandName="book">
+        <form:form id="sendForm" method="POST" commandName="book">
             <br>
             Введите новое имя:
             <br>
-            <form:input class="form-control" path="name"/>
+            <form:input id="name" class="form-control" path="name"/>
             <br>
             Введите новое описание:
             <br>
-            <form:input class="form-control" path="description"/>
+            <form:input id="description" class="form-control" path="description"/>
             <br>
             Введите год издания:
             <br>
-            <form:input class="form-control" path="year"/>
+            <form:input id="year" class="form-control" path="year"/>
             <br>
             Выберите авторов:
             <br>
@@ -59,3 +59,15 @@
     </div>
 </div>
 </body>
+
+<script type="text/javascript">
+    $("#create").click(
+            function () {
+                if (($("#year").val().trim() == "")|| ($("#name").val().trim() == "")|| ($("#description").val().trim() == "")) {
+                    alert("Заолните все поля!");
+                    return false;
+                }
+                $("#sendForm").submit();
+                return true;
+            });
+</script>

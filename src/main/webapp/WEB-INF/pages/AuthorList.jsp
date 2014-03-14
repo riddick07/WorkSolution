@@ -33,19 +33,19 @@
 
 <table border="0" width="100%" cellpadding="0" cellspacing="0">
     <tr align="right">
-    <td align="left">
-    <h3>Список авторов</h3>
-    </td>
-        <td ><sec:authorize access="hasRole('ROLE_ADMIN')">
-    <form action="${pageContext.request.contextPath}/AddAuthor.vw">
-        <input type="submit" value="Создать автора"/>
-    </form>
-</sec:authorize></td> </tr></table>
+        <td align="left">
+            <h3>Список авторов</h3>
+        </td>
+        <td><sec:authorize access="hasRole('ROLE_ADMIN')">
+            <form action="${pageContext.request.contextPath}/AddAuthor.vw">
+                <input type="submit" value="Создать автора"/>
+            </form>
+        </sec:authorize></td>
+    </tr>
+</table>
 
 
-
-<table border="1" valign="bottom" align="left" cellspacing="0"
-       cellpadding="5" width="100%">
+<table border="1" valign="bottom" align="left" cellspacing="0" cellpadding="5" width="100%">
     <tr border="0" align="left" height="20%">
         <td bgcolor="#778899">Имя</td>
         <td bgcolor="#778899">Фамилия</td>
@@ -64,7 +64,6 @@
                 </sec:authorize>
                 <a href="${pageContext.request.contextPath}/BookList.vw">Список книг</a>
             </td>
-
             </td>
         </tr>
     </c:forEach>
