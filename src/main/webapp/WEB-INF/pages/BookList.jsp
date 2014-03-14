@@ -7,6 +7,38 @@
     <title></title>
     <jsp:include page="/WEB-INF/pages/includes/jslib.jsp"/>
     <jsp:include page="/WEB-INF/pages/includes/css.jsp"/>
+    <script type="text/javascript">
+        function deleteFunc() {
+            $.ajax({
+                url: $(event.target).attr("href"),
+                type: "DELETE",
+
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Accept", "application/json");
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                },
+
+                success: function (smartphone) {
+                }
+            });
+        }
+
+        function editFunc() {
+            $.ajax({
+                url: "${pageContext.request.contextPath}/BookList.vw/book/${book.id}",
+                type: "PUT",
+
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Accept", "application/json");
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                },
+
+                success: function (smartphone) {
+                }
+            });
+        }
+
+    </script>
 </head>
 <body>
 <table border="1" width="100%" height="12%" cellpadding="0"
@@ -75,8 +107,8 @@
                 <%--<td>${book.authorNames}</td>--%>
             <sec:authorize access="hasRole('ROLE_ADMIN')">
                 <td>
-                    <a href="${pageContext.request.contextPath}/BookList.vw/edit/${book.id}">Модифицировать</a>
-                    <a href="${pageContext.request.contextPath}/BookList.vw/delete/${book.id}">Удаление</a>
+                    <input type="button" onclick="editFunc(${book})" value="Модифицировать">
+                    <input type="button" onclick="deleteFunc(${book})" value="Удаление">
                 </td>
             </sec:authorize>
         </tr>

@@ -53,7 +53,7 @@
 <script type="text/javascript">
     $("#create").click(
             function () {
-                if (($("#surname").val().trim() == "")|| ($("#name").val().trim() == "")) {
+                if (($("#surname").val().trim() == "") || ($("#name").val().trim() == "")) {
                     alert("Заолните все поля!");
                     return false;
                 }
