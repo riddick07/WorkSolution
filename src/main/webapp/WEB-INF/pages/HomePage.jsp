@@ -12,27 +12,29 @@
        cellspacing="0">
     <tr border="0" align="center" valign="middle">
         <td>
-            <h2>Вы вошли в электронную библиотеку</h2>
+            <h2>Книжный каталог</h2>
         </td>
     </tr>
 </table>
 <br/>
 <table border="0" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+    <td align="left">
+        <h2>
+            <a href="${pageContext.request.contextPath}/BookList.vw"> <u>Список книг</u> </a>
+        </h2>
+        </td>
+        <td align="right">
+            <h4><a href="j_spring_security_logout"> <u>Выйти</u> </a></h4>
+        </td>
+    </tr>
     <tr align="right">
         <td align="left">
-            <h1>
-                <a href="${pageContext.request.contextPath}/BookList.vw"> Список книг </a>
-            </h1>
+            <h2>
+                <a href="${pageContext.request.contextPath}/AuthorList.vw"> <u>Список авторов</u> </a>
+            </h2>
         </td>
-        <td>
-            <h4><a href="j_spring_security_logout"> Выйти </a></h4>
-        </td>
-    </tr>
-    <tr>
-        <h1>
-            <a href="${pageContext.request.contextPath}/AuthorList.vw"> Список авторов </a>
-        </h1>
-    </tr>
+         </tr>
 </table>
 <br/>
 
