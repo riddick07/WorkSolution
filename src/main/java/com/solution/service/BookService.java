@@ -34,9 +34,10 @@ public class BookService implements IBookService {
 
 
     public Book searchBook(String name) {
+        name = name.replace("=", "");
         List<Book> books = listBooks();
         for (Book book : books) {
-            if (book.getName().equals(name
+            if (book.getName().contains(name
             )) return book;
         }
         return null;

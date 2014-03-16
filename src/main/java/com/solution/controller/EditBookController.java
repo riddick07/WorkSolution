@@ -27,11 +27,6 @@ public class EditBookController extends SimpleFormController {
     @Autowired
     private IAuthorService authorService;
 
-
-    public String getModelName() {
-        return "EditBook";
-    }
-
     public EditBookController() {
         setCommandClass(Book.class);
         setCommandName("book");

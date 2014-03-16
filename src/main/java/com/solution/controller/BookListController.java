@@ -31,7 +31,7 @@ public class BookListController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    protected ModelAndView openMain(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    protected ModelAndView openMain() throws Exception {
         Map<String, Object> model = new HashMap<String, Object>();
         List<Book> books = bookService.listBooks();
         model.put("books", books);
@@ -40,22 +40,22 @@ public class BookListController {
     }
 
 
-    @RequestMapping(value = "/delete/{ids}", method = RequestMethod.DELETE)
+    @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
     @ResponseBody
-    public ModelAndView delete(@PathVariable("ids") int id) throws Exception {
+    public ModelAndView delete(@PathVariable int id) throws Exception {
         bookService.removeBook(id);
         return new ModelAndView(getModelName());
     }
 
-    @RequestMapping(value = "/search/{name}", method = RequestMethod.PUT)
+    @RequestMapping(method = RequestMethod.PUT)
     @ResponseBody
-    public ModelAndView search(@PathVariable("name") String name) throws Exception {
-        Book book = bookService.searchBook(name);
+    public ModelAndView search(@RequestBody String name) throws Exception {
+        Book book = bookService.searchBook(name.trim());
         List<Book> books = new ArrayList<Book>();
         books.add(book);
         Map<String, Object> model = new HashMap<String, Object>();
         model.put("books", books);
 
-        return new ModelAndView(getModelName(), "model", model);
+        return new ModelAndView("redirect:BookList.vw", "model", model);
     }
 }

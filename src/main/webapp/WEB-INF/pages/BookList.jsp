@@ -14,53 +14,43 @@
         function deleteFunc(id) {
             console.log(id);
             $.ajax({
-                datatype: "json",
+                dataType: "json",
                 type: "DELETE",
-                url: contexPath + "BookList.vw/delete/" + id,
-                dataType: "application/json",
-                contentType: "application/json",
-                data: {"ids": id},
+                url: contexPath + "BookList.vw/" + id,
+                async: true,
                 success: function (response) {
-                    alert('Response: ' + response);
                 },
                 error: function (e) {
-                    alert('Error: ' + e);
+                    alert("Книга не найдена");
                 }
             });
         }
 
-        function modifyFunc(id) {
-            console.log(id);
+        function modifyFunc(b) {
+            console.log(b);
             $.ajax({
                 datatype: "json",
                 type: "POST",
                 url: contexPath + "EditBook.vw",
-                dataType: "application/json",
-                contentType: "application/json",
-                data: {"id": id},
+                data: b,
                 success: function (response) {
-                    alert('Response: ' + response);
                 },
                 error: function (e) {
-                    alert('Error: ' + e);
+                    alert('Модификация книги невозможна. Проблемы с сервером ');
                 }
             });
         }
 
-        function searchFunc(id) {
-            console.log(id);
+        function searchFunc() {
             $.ajax({
                 datatype: "json",
                 type: "PUT",
-                url: contexPath + "BookList.vw/search",
-                dataType: "application/json",
-                contentType: "application/json",
-                data: {"name": $('#searchName').val()},
+                url: contexPath + "BookList.vw",
+                data: $('#searchName'),
                 success: function (response) {
-                    alert('Response: ' + response);
                 },
                 error: function (e) {
-                    alert('Error: ' + e);
+                    alert('Книга не найдена ');
                 }
             });
         }
@@ -131,7 +121,7 @@
                 <%--<td>${book.authorNames}</td>--%>
             <sec:authorize access="hasRole('ROLE_ADMIN')">
                 <td>
-                    <input type="button" onclick="modifyFunc(${book.id})" value="Модифицировать">
+                    <input type="button" onclick="modifyFunc(${book})" value="Модифицировать">
                     <input type="button" onclick="deleteFunc(${book.id})" value="Удаление">
                 </td>
             </sec:authorize>
