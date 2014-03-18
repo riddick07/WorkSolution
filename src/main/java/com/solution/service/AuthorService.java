@@ -32,4 +32,10 @@ public class AuthorService implements IAuthorService {
         authorDao.removeAuthor(id);
     }
 
+    @Override
+    @Transactional
+    public List<Author> getByName(String fullName) {
+        return authorDao.getByFullName(fullName);
+    }
+
 }

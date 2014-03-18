@@ -17,4 +17,7 @@ public interface IBookService {
 
     @Transactional
     Book searchBook(String name);
+
+    @Transactional
+    Book getById(int id);
 }

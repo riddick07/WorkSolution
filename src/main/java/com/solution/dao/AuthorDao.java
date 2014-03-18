@@ -2,6 +2,7 @@ package com.solution.dao;
 
 import com.solution.model.Author;
 import com.solution.model.Book;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -40,5 +41,14 @@ public class AuthorDao implements IAuthorDao {
         if (null != author) {
             sessionFactory.getCurrentSession().update(author);
         }
+    }
+
+    @Override
+    public List<Author> getByFullName(String name) {
+        String hql = "from Author au where au.fullName = :fullName";
+        Query query = sessionFactory.getCurrentSession().createQuery(hql);
+        Query fullName = query.setString("fullName", name);
+        Object au = fullName.list();
+        return (List<Author>) au;
     }
 }

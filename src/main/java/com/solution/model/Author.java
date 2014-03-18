@@ -1,6 +1,7 @@
 package com.solution.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -8,20 +9,22 @@ import java.util.Set;
 
 @Entity
 @Table(name = "solution_author")
-public class Author {
+public class Author implements Serializable {
+
+    private static final long serialVersionUID = -5982164967848387710L;
 
     private Integer id;
     private String fullName;
     private String name;
     private String surname;
-    private Set<Book> books = new HashSet<Book>();
+    private Set<Book> books;
 
-    @ManyToMany(targetEntity = Book.class)
-    public Set <Book> getBooks() {
+    @ManyToMany(targetEntity = Book.class, fetch = FetchType.EAGER)
+    public Set<Book> getBooks() {
         return books;
     }
 
-    public void setBooks(Set <Book> books) {
+    public void setBooks(Set<Book> books) {
         this.books = books;
     }
 

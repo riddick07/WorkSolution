@@ -14,4 +14,7 @@ public interface IAuthorService {
 
     @Transactional
     void removeAuthor(Integer id);
+
+    @Transactional
+    List<Author> getByName(String fullName);
 }

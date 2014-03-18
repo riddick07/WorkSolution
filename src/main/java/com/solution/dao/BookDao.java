@@ -33,6 +33,11 @@ public class BookDao implements IBookDao {
     }
 
     @Override
+    public Book getById(Integer id) {
+        return (Book) sessionFactory.getCurrentSession().load(Book.class, id);
+    }
+
+    @Override
     public void updateBook(Book book) {
         book = (Book) sessionFactory.getCurrentSession().load(Book.class, book.getId());
         if (null != book) {

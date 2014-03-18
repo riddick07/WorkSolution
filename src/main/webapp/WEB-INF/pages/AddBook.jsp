@@ -22,50 +22,54 @@
 
 <div class="wrapper">
     <div class="span9">
-   
+
         <table border="0" width="200%" cellpadding="0" cellspacing="0">
-    <tr align="right">
-        <td align="left">
-                    <a href="${pageContext.request.contextPath}/HomePage.vw"> <u>Главная</u></a>
-                    &nbsp > &nbsp
-                    <a href="${pageContext.request.contextPath}/BookList.vw"> <u>Список книг</u> </a> &nbsp > &nbsp
-                    Создание книги
+            <tr align="right">
+                <td align="left">
+                    <a href="${pageContext.request.contextPath}/HomePage.vw"><u>Главная</u></a> &nbsp > &nbsp<a href="${pageContext.request.contextPath}/BookList.vw"><u>Список книг</u></a> &nbsp > &nbsp Cоздание книги
                 </td>
                 <td>
-            <h4><a href="j_spring_security_logout"> <u>Выйти</u> </a></h4>
-        </td>
+                    <h4><a href="j_spring_security_logout">Выйти</a></h4>
+                </td>
             </tr>
         </table>
         </br>
-        <form:form id="sendForm" method="POST" commandName="book">
-        <table heigth="30%" width="65%" border="0" cellpadding="0" cellspacing="0"><tr>
-            <td valign="top" ><h3>Заполните необходимые значения и нажмите кнопку</h3>  </td>
-            <td valign="bottom" > &nbsp <input id="create" type="button" value="Создать"/></td></tr>
-             </table>
-            <table border="0">
-        <tr><td>
-            Название:</td>
-            
-            <td><form:input id="name" class="form-control" path="name"/></td>
-            </tr><br>
-           <tr> <td>Краткое описание:</td>
-            
-            <td ><form:input id="description" class="form-control" path="description"/></td>
-            </tr>
-            <br>
-            <tr>
-           <td> Год издания:</td>
-            
-           <td> <form:input id="year" class="form-control" path="year"/></td>
-            <br>
-            </tr>
-           <tr><td> Выберите автора:</td>
-            
-            <td><form:select path="authorNames" onchange="submitForm()">
-                <form:options items="${authorNames}"/>
-            </form:select></td></tr>
+        <form:form method="POST" action="${pageContext.request.contextPath}/AddBook.vw" commandName="book" modelAttribute="book">
+            <table heigth="30%" width="65%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td valign="top"><h3>Заполните необходимые значения и нажмите кнопку</h3></td>
+                    <td valign="bottom">
+                        &nbsp <input type="submit" value="Создать"/></td>
+                </tr>
             </table>
-           
+            <table border="0">
+                <tr>
+                    <td>Название:</td>
+                    <td>
+                        <form:input path="name"></form:input>
+                    </td>
+                </tr>
+                <br>
+                <tr>
+                    <td>Краткое описание:</td>
+                    <td><form:input path="description"></form:input></td>
+                </tr>
+                <br>
+                <tr>
+                    <td> Год издания:</td>
+                    <td><form:input path="year"></form:input></td>
+                    <br>
+                </tr>
+                <tr>
+                    <td> Выберите автора:</td>
+                    <td><form:select multiple="multiple" type="text" path="authorNames">
+                        <c:forEach items="${model.authors}" var="au">
+                            <form:option value="${au.fullName}" label="${au.fullName}" >${au.fullName}</form:option>
+                        </c:forEach>
+                    </form:select>
+                    </td>
+                </tr>
+            </table>
         </form:form>
     </div>
 </div>
@@ -74,7 +78,7 @@
 <script type="text/javascript">
     $("#create").click(
             function () {
-                if (($("#year").val().trim() == "")|| ($("#name").val().trim() == "")|| ($("#description").val().trim() == "")) {
+                if (($("#year").val().trim() == "") || ($("#name").val().trim() == "") || ($("#description").val().trim() == "")) {
                     alert("Заолните все поля!");
                     return false;
                 }

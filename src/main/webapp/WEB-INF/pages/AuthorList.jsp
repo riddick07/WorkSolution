@@ -9,29 +9,12 @@
     <jsp:include page="/WEB-INF/pages/includes/css.jsp"/>
 
     <script type="text/javascript">
-        var contexPath = "${pageContext.request.contextPath}/";
+        var contextPath = "${pageContext.request.contextPath}/";
         function deleteFunc(id) {
-            console.log(id);
             $.ajax({
                 datatype: "json",
-                type: "POST",
-                url: contexPath + "AuthorList.vw/delete",
-                data: {"ids":id},
-                success: function (response) {
-                    alert('Response: ' + response);
-                },
-                error: function (e) {
-                    alert('Error: ' + e);
-                }
-            });
-        }
-
-        function modifyFunc(id) {
-            console.log(id);
-            $.ajax({
-                datatype: "json",
-                type: "POST",
-                url: contexPath + "EditAuthor.vw",
+                type: "DELETE",
+                url: contextPath + "AuthorList.vw/" + id,
                 data: {"id":id},
                 success: function (response) {
                     alert('Response: ' + response);
@@ -42,18 +25,24 @@
             });
         }
 
-        function openBookListFunc(id) {
-            console.log(id);
+        function modifyFunc(author) {
             $.ajax({
                 datatype: "json",
                 type: "POST",
-                url: contexPath + "BookList.vw",
+                url: contextPath + "EditAuthor.vw",
+                data: author,
+                success: function (response) {
+                }
+            });
+        }
+
+        function openBookListFunc(id) {
+            $.ajax({
+                datatype: "json",
+                type: "GET",
+                url: contextPath + "BookList.vw",
                 data: { "id": id },
                 success: function (response) {
-                    alert('Response: ' + response);
-                },
-                error: function (e) {
-                    alert('Error: ' + e);
                 }
             });
         }
@@ -107,8 +96,6 @@
                     <input type="button" onclick="deleteFunc(${a.id})" value="Удаление">
                 </sec:authorize>
                 <input type="button" onclick="openBookListFunc(${a.id})" value="Список книг">
-            </td>
-
             </td>
         </tr>
     </c:forEach>

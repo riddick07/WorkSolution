@@ -14,14 +14,16 @@ import java.util.Set;
 @Table(name = "solution_book")
 public class Book implements Serializable {
 
+    private static final long serialVersionUID = -7233580203924480960L;
+
     private Integer id;
     private String name;
     private String description;
     private String year;
-    private Set<Author> authors = new HashSet<Author>();
+    private Set<Author> authors;
     private List<String> authorNames;
 
-    @ManyToMany(targetEntity = Author.class, mappedBy = "books")
+    @ManyToMany(targetEntity = Author.class, mappedBy = "books", fetch = FetchType.EAGER)
     public Set<Author> getAuthors() {
         return authors;
     }
@@ -46,7 +48,7 @@ public class Book implements Serializable {
         return description;
     }
 
-    @CollectionOfElements
+    @CollectionOfElements(fetch = FetchType.EAGER)
     public List<String> getAuthorNames() {
         return authorNames;
     }

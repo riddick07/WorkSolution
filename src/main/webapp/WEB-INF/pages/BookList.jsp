@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
 
     <script type="text/javascript">
 
-        var contexPath = "${pageContext.request.contextPath}/";
+        var contextPath = "${pageContext.request.contextPath}/";
         function deleteFunc(id) {
             console.log(id);
             $.ajax({
@@ -31,7 +32,7 @@
             $.ajax({
                 datatype: "json",
                 type: "POST",
-                url: contexPath + "EditBook.vw",
+                url: contextPath + "EditBook.vw",
                 data: b,
                 success: function (response) {
                 },
@@ -45,7 +46,7 @@
             $.ajax({
                 datatype: "json",
                 type: "PUT",
-                url: contexPath + "BookList.vw",
+                url: contextPath + "BookList.vw",
                 data: $('#searchName'),
                 success: function (response) {
                 },
@@ -117,8 +118,7 @@
             <td>${book.name}</td>
             <td>${book.description}</td>
             <td>${book.year}</td>
-            <td></td>
-                <%--<td>${book.authorNames}</td>--%>
+            <td>${book.authorNames}</td>
             <sec:authorize access="hasRole('ROLE_ADMIN')">
                 <td>
                     <input type="button" onclick="modifyFunc(${book})" value="Модифицировать">

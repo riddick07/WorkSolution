@@ -17,7 +17,7 @@
 
     <bean id="dataSource"
           class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"
-          p:driverClassName="com.mysql.jdbc.Driver"
+          p:driverClassName="${jdbc.driverClassName}"
           p:url="${jdbc.databaseurl}" p:username="${jdbc.username}"
           p:password="${jdbc.password}"/>
 

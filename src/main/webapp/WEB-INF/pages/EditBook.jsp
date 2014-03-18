@@ -33,28 +33,42 @@
             </tr>
         </table>
 
-        <form:form id="sendForm" method="POST" commandName="book">
-            <br>
-            Введите новое имя:
-            <br>
-            <form:input id="name" class="form-control" path="name"/>
-            <br>
-            Введите новое описание:
-            <br>
-            <form:input id="description" class="form-control" path="description"/>
-            <br>
-            Введите год издания:
-            <br>
-            <form:input id="year" class="form-control" path="year"/>
-            <br>
-            Выберите авторов:
-            <br>
-
-            <form:select path="authorNames" onchange="submitForm()">
-                <form:options items="${authorNames}" />
-            </form:select>
-            <br>
-            <input type="submit" value="Изменить"/>
+        <form:form method="POST" action="${pageContext.request.contextPath}/EditBook.vw" commandName="book" modelAttribute="book">
+            <table heigth="30%" width="65%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td valign="top"><h3>Заполните необходимые значения и нажмите кнопку</h3></td>
+                    <td valign="bottom">
+                        &nbsp <input type="submit" value="Изменить"/></td>
+                </tr>
+            </table>
+            <table border="0">
+                <tr>
+                    <td>Название:</td>
+                    <td>
+                        <form:input path="name"></form:input>
+                    </td>
+                </tr>
+                <br>
+                <tr>
+                    <td>Краткое описание:</td>
+                    <td><form:input path="description"></form:input></td>
+                </tr>
+                <br>
+                <tr>
+                    <td> Год издания:</td>
+                    <td><form:input path="year"></form:input></td>
+                    <br>
+                </tr>
+                <tr>
+                    <td> Выберите автора:</td>
+                    <td><form:select multiple="multiple" type="text" path="authorNames">
+                        <c:forEach items="${model.authors}" var="au">
+                            <form:option value="${au.fullName}" label="${au.fullName}" >${au.fullName}</form:option>
+                        </c:forEach>
+                    </form:select>
+                    </td>
+                </tr>
+            </table>
         </form:form>
     </div>
 </div>

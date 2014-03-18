@@ -6,20 +6,22 @@ import com.solution.service.IAuthorService;
 import com.solution.service.IBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping("/EditBook.vw")
-public class EditBookController extends SimpleFormController {
+public class EditBookController {
 
     @Autowired
     private IBookService bookService;
@@ -27,29 +29,23 @@ public class EditBookController extends SimpleFormController {
     @Autowired
     private IAuthorService authorService;
 
-    public EditBookController() {
-        setCommandClass(Book.class);
-        setCommandName("book");
+
+    @RequestMapping(method = RequestMethod.GET)
+    protected ModelAndView openMain(@PathVariable("id") int id, Model m) throws Exception {
+        Book book = bookService.getById(id);
+
+        m.addAttribute("book", book);
+
+        Map<String, Object> model = new HashMap<String, Object>();
+        List<Author> authors = authorService.listAuthor();
+        model.put("authors", authors);
+
+        return new ModelAndView("EditBook", "model", model);
     }
 
-    @Override
-    protected Map<String, Object> referenceData(HttpServletRequest request) throws Exception {
-
-        Map<String, Object> referenceData = new HashMap<String, Object>();
-        List<String> authors = new ArrayList<String>();
-        List<Author> authorList = authorService.listAuthor();
-        for (Author author : authorList) {
-            authors.add(author.getFullName());
-        }
-        referenceData.put("authorNames", authors);
-
-        return referenceData;
-    }
-
-    @Override
-    protected ModelAndView onSubmit(Object command) throws Exception {
-        Book book = (Book) command;
-        bookService.addBook(book);
+    @RequestMapping(method = RequestMethod.POST)
+    public ModelAndView create(@ModelAttribute("book") Book book) throws Exception {
+        //TODO: Modify book
 
         Map<String, Object> model = new HashMap<String, Object>();
         List<Book> books = bookService.listBooks();

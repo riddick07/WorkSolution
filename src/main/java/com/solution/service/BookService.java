@@ -28,6 +28,12 @@ public class BookService implements IBookService {
 
     @Override
     @Transactional
+    public Book getById(int id) {
+        return bookDao.getById(id);
+    }
+
+    @Override
+    @Transactional
     public void removeBook(Integer id) {
         bookDao.removeBook(id);
     }

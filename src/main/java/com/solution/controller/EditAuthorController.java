@@ -18,23 +18,11 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/EditAuthor.vw")
-public class EditAuthorController extends SimpleFormController {
+public class EditAuthorController {
 
     @Autowired
     private IAuthorService authorService;
 
-    public EditAuthorController() {
-        setCommandClass(Author.class);
-        setCommandName("author");
-    }
-
-    @Override
-    protected Map<String, Object> referenceData(HttpServletRequest request) throws Exception {
-        Map<String, Object> referenceData = new HashMap<String, Object>();
-        return referenceData;
-    }
-
-    @Override
     protected ModelAndView onSubmit(Object command) throws Exception {
         Author author = (Author) command;
         author.setFullName(author.getName() + " " + author.getSurname());

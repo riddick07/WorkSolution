@@ -33,18 +33,18 @@
             </tr>
         </table>
 
-        <form:form id="createForm" method="POST" commandName="author">
+        <form:form method="POST" action="${pageContext.request.contextPath}/AddAuthor.vw" commandName="author" modelAttribute="author">
             <br>
             Введите имя
             <br>
-            <form:input id="name" class="form-control" path="name"/>
+            <form:input class="form-control" path="name"/>
             <br>
             Введите фамилию
             <br>
-            <form:input id="surname" class="form-control" path="surname"/>
+            <form:input class="form-control" path="surname"/>
             <br>
 
-            <input id="create" type="button" value="Создать"/>
+            <input type="submit" value="Создать"/>
         </form:form>
     </div>
 </div>

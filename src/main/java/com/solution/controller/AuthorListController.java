@@ -37,11 +37,4 @@ public class AuthorListController {
 
         return new ModelAndView(getModelName(), "model", model);
     }
-
-    @RequestMapping(value = "/delete/{ids}", method = RequestMethod.POST)
-    @ResponseBody
-    public ModelAndView delete(@PathVariable("ids") Integer id) throws Exception {
-        authorService.removeAuthor(id);
-        return new ModelAndView(getModelName());
-    }
 }

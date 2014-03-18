@@ -11,10 +11,7 @@ import org.springframework.web.servlet.mvc.SimpleFormController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping("/BookList.vw")
@@ -39,7 +36,6 @@ public class BookListController {
         return new ModelAndView(getModelName(), "model", model);
     }
 
-
     @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
     @ResponseBody
     public ModelAndView delete(@PathVariable int id) throws Exception {
@@ -49,7 +45,7 @@ public class BookListController {
 
     @RequestMapping(method = RequestMethod.PUT)
     @ResponseBody
-    public ModelAndView search(@RequestBody String name) throws Exception {
+    public ModelAndView search(@RequestParam String name) throws Exception {
         Book book = bookService.searchBook(name.trim());
         List<Book> books = new ArrayList<Book>();
         books.add(book);

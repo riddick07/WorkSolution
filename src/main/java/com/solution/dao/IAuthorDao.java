@@ -12,4 +12,6 @@ public interface IAuthorDao {
     void removeAuthor(Integer id);
 
     public void updateAuthor(Author author);
+
+    List<Author> getByFullName(String name);
 }

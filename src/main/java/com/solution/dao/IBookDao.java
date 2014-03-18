@@ -12,4 +12,6 @@ public interface IBookDao {
     void removeBook(Integer id);
 
     public void updateBook(Book book);
+
+    Book getById(Integer id);
 }
