@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -38,15 +39,23 @@ public class BookService implements IBookService {
         bookDao.removeBook(id);
     }
 
+    @Override
+    @Transactional
+    public void updateBook(Book book) {
+        bookDao.updateBook(book);
+    }
 
-    public Book searchBook(String name) {
-        name = name.replace("=", "");
+    @Override
+    @Transactional
+    public List<Book> searchBook(String name) {
         List<Book> books = listBooks();
+        List<Book> res = new ArrayList<Book>();
         for (Book book : books) {
-            if (book.getName().contains(name
-            )) return book;
+            if (book.getName() != null)
+                if (book.getName().contains(name))
+                    res.add(book);
         }
-        return null;
+        return res;
     }
 
 

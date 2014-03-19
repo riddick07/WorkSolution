@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +14,11 @@
 
         var contextPath = "${pageContext.request.contextPath}/";
         function deleteFunc(id) {
-            console.log(id);
+            alert(id);
             $.ajax({
                 dataType: "json",
                 type: "DELETE",
-                url: contexPath + "BookList.vw/" + id,
+                url: contextPath + "BookList.vw/" + id + ".vw",
                 async: true,
                 success: function (response) {
                 },
@@ -27,31 +28,16 @@
             });
         }
 
-        function modifyFunc(b) {
-            console.log(b);
+        function modifyFunc(id) {
+            alert(id);
             $.ajax({
-                datatype: "json",
-                type: "POST",
-                url: contextPath + "EditBook.vw",
-                data: b,
+                dataType: "json",
+                type: "GET",
+                url: contextPath + "EditBook.vw/" + id + ".vw",
                 success: function (response) {
                 },
                 error: function (e) {
                     alert('Модификация книги невозможна. Проблемы с сервером ');
-                }
-            });
-        }
-
-        function searchFunc() {
-            $.ajax({
-                datatype: "json",
-                type: "PUT",
-                url: contextPath + "BookList.vw",
-                data: $('#searchName'),
-                success: function (response) {
-                },
-                error: function (e) {
-                    alert('Книга не найдена ');
                 }
             });
         }
@@ -82,13 +68,17 @@
 
 <table border="0" width="span4" cellpadding="0" cellspacing="0">
     <tr>
-        <td style="padding-right: 2em; vertical-align: middle">Введите название книги</td>
-        <td style="padding-right: 2em">
-            <input id="searchName" type="text" class="form-control" path="name"/>
-        </td>
-        <td>
-            <input type="button" onclick="searchFunc()" value="Искать"/>
-        </td>
+        <form:form method="POST" action="${pageContext.request.contextPath}/BookList.vw"
+                   cssStyle="display: inline;"
+                   modelAttribute="book">
+            <td style="padding-right: 2em; vertical-align: middle">Введите название книги</td>
+            <td style="padding-right: 2em">
+                <form:input path="name"></form:input>
+            </td>
+            <td>
+                <input type="submit" value="Искать"/>
+            </td>
+        </form:form>
     </tr>
 </table>
 
@@ -121,7 +111,7 @@
             <td>${book.authorNames}</td>
             <sec:authorize access="hasRole('ROLE_ADMIN')">
                 <td>
-                    <input type="button" onclick="modifyFunc(${book})" value="Модифицировать">
+                    <input type="button" onclick="modifyFunc(${book.id})" value="Модифицировать">
                     <input type="button" onclick="deleteFunc(${book.id})" value="Удаление">
                 </td>
             </sec:authorize>

@@ -33,7 +33,7 @@
             </tr>
         </table>
 
-        <form:form method="POST" action="${pageContext.request.contextPath}/AddAuthor.vw" commandName="author" modelAttribute="author">
+        <form:form method="POST" action="${pageContext.request.contextPath}/AddAuthor.vw" modelAttribute="author">
             <br>
             Введите имя
             <br>

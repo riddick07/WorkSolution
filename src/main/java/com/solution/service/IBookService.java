@@ -16,8 +16,11 @@ public interface IBookService {
     void removeBook(Integer id);
 
     @Transactional
-    Book searchBook(String name);
+    List<Book> searchBook(String name);
 
     @Transactional
     Book getById(int id);
+
+    @Transactional
+    void updateBook(Book book);
 }

@@ -45,7 +45,7 @@ public class EditBookController {
 
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView create(@ModelAttribute("book") Book book) throws Exception {
-        //TODO: Modify book
+        bookService.updateBook(book);
 
         Map<String, Object> model = new HashMap<String, Object>();
         List<Book> books = bookService.listBooks();

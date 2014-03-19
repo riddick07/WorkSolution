@@ -34,7 +34,7 @@
             </tr>
         </table>
         </br>
-        <form:form method="POST" action="${pageContext.request.contextPath}/AddBook.vw" commandName="book" modelAttribute="book">
+        <form:form method="POST" action="${pageContext.request.contextPath}/AddBook.vw" modelAttribute="book">
             <table heigth="30%" width="65%" border="0" cellpadding="0" cellspacing="0">
                 <tr>
                     <td valign="top"><h3>Заполните необходимые значения и нажмите кнопку</h3></td>
