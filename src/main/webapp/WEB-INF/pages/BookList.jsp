@@ -12,13 +12,12 @@
 
     <script type="text/javascript">
 
-        var contextPath = "${pageContext.request.contextPath}/";
         function deleteFunc(id) {
             alert(id);
             $.ajax({
                 dataType: "json",
                 type: "DELETE",
-                url: contextPath + "BookList.vw/" + id + ".vw",
+                url: "/BookList.vw/" + id,
                 async: true,
                 success: function (response) {
                 },
@@ -32,8 +31,9 @@
             alert(id);
             $.ajax({
                 dataType: "json",
-                type: "GET",
-                url: contextPath + "EditBook.vw/" + id + ".vw",
+                type: "PUT",
+                url: "/EditBook.vw",
+                data: id,
                 success: function (response) {
                 },
                 error: function (e) {
@@ -111,8 +111,8 @@
             <td>${book.authorNames}</td>
             <sec:authorize access="hasRole('ROLE_ADMIN')">
                 <td>
-                    <input type="button" onclick="modifyFunc(${book.id})" value="Модифицировать">
-                    <input type="button" onclick="deleteFunc(${book.id})" value="Удаление">
+                    <input id="editBtn" type="button" onclick="modifyFunc(${book.id})" value="Модифицировать">
+                    <input id="deleteBtn"  type="button" onclick="deleteFunc(${book.id})" value="Удаление">
                 </td>
             </sec:authorize>
         </tr>

@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 
@@ -46,6 +43,18 @@ public class EditBookController {
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView create(@ModelAttribute("book") Book book) throws Exception {
         bookService.updateBook(book);
+
+        Map<String, Object> model = new HashMap<String, Object>();
+        List<Book> books = bookService.listBooks();
+        model.put("books", books);
+        return new ModelAndView("BookList", "model", model);
+    }
+
+    @RequestMapping(method = RequestMethod.PUT)
+    public ModelAndView initMethod(@RequestParam int id, Model m) throws Exception {
+        Book book = bookService.getById(id);
+
+        m.addAttribute("book", book);
 
         Map<String, Object> model = new HashMap<String, Object>();
         List<Book> books = bookService.listBooks();

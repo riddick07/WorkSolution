@@ -32,6 +32,10 @@ public class BookListController {
     protected ModelAndView openMain(Model m) throws Exception {
         m.addAttribute("book", new Book());
 
+        return getModelAndView();
+    }
+
+    private ModelAndView getModelAndView() {
         Map<String, Object> model = new HashMap<String, Object>();
         List<Book> books = bookService.listBooks();
         model.put("books", books);
@@ -40,9 +44,9 @@ public class BookListController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
-    public ModelAndView delete(@PathVariable int id) throws Exception {
+    public @ResponseBody ModelAndView delete(@PathVariable int id) throws Exception {
         bookService.removeBook(id);
-        return new ModelAndView(getModelName());
+        return getModelAndView();
     }
 
     @RequestMapping(method = RequestMethod.POST)
@@ -51,6 +55,6 @@ public class BookListController {
         Map<String, Object> model = new HashMap<String, Object>();
         model.put("books", books);
 
-        return new ModelAndView("BookList", "model", model);
+        return new ModelAndView(getModelName(), "model", model);
     }
 }
