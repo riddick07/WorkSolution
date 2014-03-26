@@ -46,18 +46,7 @@
         }
     </script>
 </head>
-<body onload="init()">
-
-<form>
-    <input type="text" id="name"><br/>
-    <input type="button" id="searchButton" value="Search">
-
-    <div id="results"></div>
-</form>
-
-
-<%-- tasks --%>
-
+<body>
 <table border="1" width="100%" height="12%" cellpadding="0"
        cellspacing="0">
     <tr border="0" align="center" valign="middle">
