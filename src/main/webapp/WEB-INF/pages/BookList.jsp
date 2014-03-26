@@ -11,6 +11,9 @@
     <jsp:include page="/WEB-INF/pages/includes/css.jsp"/>
 
     <script type="text/javascript">
+        $(document).ready(function () {
+
+        })
 
         function deleteFunc(id) {
             alert(id);
@@ -43,7 +46,18 @@
         }
     </script>
 </head>
-<body>
+<body onload="init()">
+
+<form>
+    <input type="text" id="name"><br/>
+    <input type="button" id="searchButton" value="Search">
+
+    <div id="results"></div>
+</form>
+
+
+<%-- tasks --%>
+
 <table border="1" width="100%" height="12%" cellpadding="0"
        cellspacing="0">
     <tr border="0" align="center" valign="middle">
@@ -112,7 +126,7 @@
             <sec:authorize access="hasRole('ROLE_ADMIN')">
                 <td>
                     <input id="editBtn" type="button" onclick="modifyFunc(${book.id})" value="Модифицировать">
-                    <input id="deleteBtn"  type="button" onclick="deleteFunc(${book.id})" value="Удаление">
+                    <input id="deleteBtn" type="button" onclick="deleteFunc(${book.id})" value="Удаление">
                 </td>
             </sec:authorize>
         </tr>
